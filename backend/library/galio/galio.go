@@ -41,10 +41,6 @@ func (app *App) OnStart(hook func()) {
 }
 
 func (app *App) Run() {
-	app.runStartHooks(app.ctx)
-
-	fmt.Println("appliaction run start")
-
 	app.runStartShutdown(app.ctx)
 }
 
@@ -54,7 +50,7 @@ func (app *App) Shutdown(ctx context.Context) error {
 	return nil
 }
 
-func (app *App) runStartHooks(ctx context.Context) error {
+func (app *App) runStartHooks() error {
 	for _, hook := range app.startHooks {
 		hook()
 	}
@@ -64,7 +60,7 @@ func (app *App) runStartHooks(ctx context.Context) error {
 
 func (app *App) runStartShutdown(ctx context.Context) error {
 
-	app.runStartHooks(ctx)
+	app.runStartHooks()
 
 	err := app.Shutdown(ctx)
 	if err != nil {

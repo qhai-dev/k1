@@ -1,5 +1,6 @@
 {
 	"name": "@galio/miniapp",
+	"version": "0.0.1",
 	"private": true,
 	"scripts": {
 		"new": "taro new",
