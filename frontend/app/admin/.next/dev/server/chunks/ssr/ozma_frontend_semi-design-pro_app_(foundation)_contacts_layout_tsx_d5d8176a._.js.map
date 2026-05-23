@@ -1,6 +1,0 @@
-{
-  "version": 3,
-  "sources": [],
-  "sections": [
-    {"offset": {"line": 4, "column": 0}, "map": {"version":3,"sources":["file:///Users/qhai-dev/qhai-dev/ozma/frontend/semi-design-pro/app/%28foundation%29/contacts/layout.tsx"],"sourcesContent":["import { PropsWithChildren } from \"react\";\n\nexport default function Layout({ children }: Readonly<PropsWithChildren>) {\n\treturn children;\n}\n"],"names":[],"mappings":";;;;AAEe,SAAS,OAAO,EAAE,QAAQ,EAA+B;IACvE,OAAO;AACR"}}]
-}

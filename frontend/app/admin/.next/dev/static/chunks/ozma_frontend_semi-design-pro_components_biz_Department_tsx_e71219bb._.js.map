@@ -1,6 +1,0 @@
-{
-  "version": 3,
-  "sources": [],
-  "sections": [
-    {"offset": {"line": 4, "column": 0}, "map": {"version":3,"sources":["file:///Users/qhai-dev/qhai-dev/ozma/frontend/semi-design-pro/components/biz/Department.tsx"],"sourcesContent":["\"use client\";\n\nexport default function Department() {\n\treturn <div>department component</div>;\n}\n"],"names":["c","_c","Department","$","$i","Symbol","for","t0"],"mappings":";;;;;AAAa,SAAAA,CAAA,IAAAC,EAAA;AAAb,YAAY;;;AAEG;IAAA,MAAAE,CAAA,OAAAF,gZAAA,EAAA;IAAA,IAAAE,CAAA,CAAA,EAAA,KAAA,oEAAA;QAAA,IAAA,IAAAC,EAAA,GAAA,GAAAA,EAAA,GAAA,GAAAA,EAAA,IAAA,EAAA;YAAAD,CAAA,CAAAC,EAAA,CAAA,GAAAC,MAAA,CAAAC,GAAA,CAAA;QAAA;QAAAH,CAAA,CAAA,EAAA,GAAA;IAAA;IAAA,IAAAI,EAAA;IAAA,IAAAJ,CAAA,CAAA,EAAA,KAAAE,MAAA,CAAAC,GAAA,CAAA,8BAAA;QACPC,EAAA,iBAAA,6ZAAA,GAA+B;sBAA1B,oBAAoB,EAAzB,GAA+B;;;;;;QAAAJ,CAAA,CAAA,EAAA,GAAAI,EAAA;IAAA,OAAA;QAAAA,EAAA,GAAAJ,CAAA,CAAA,EAAA;IAAA;IAAA,OAA/BI,EAA+B;AAAA;KADxBL,WAAA","ignoreList":[]}}]
-}

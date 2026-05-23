@@ -1,7 +1,0 @@
-{
-  "version": 3,
-  "sources": [],
-  "sections": [
-    {"offset": {"line": 10, "column": 0}, "map": {"version":3,"sources":["file:///Users/qhai-dev/qhai-dev/galio/frontend/app/admin/contexts/tanstack-query-context.tsx"],"sourcesContent":["\"use client\";\n\nimport { PropsWithChildren } from \"react\";\nimport { QueryClient, QueryClientProvider } from \"@tanstack/react-query\";\n\nconst queryClient = new QueryClient();\n\nexport default function TanstackQueryProvider({ children }: PropsWithChildren) {\n\treturn (\n\t\t<QueryClientProvider client={queryClient}>\n\t\t\t{children}\n\t\t</QueryClientProvider>\n\t)\n}\n"],"names":[],"mappings":";;;;;AAGA;AAAA;AAHA;;;AAKA,MAAM,cAAc,IAAI,sQAAW;AAEpB,SAAS,sBAAsB,EAAE,QAAQ,EAAqB;IAC5E,qBACC,0bAAC,8SAAmB;QAAC,QAAQ;kBAC3B;;;;;;AAGJ"}},
-    {"offset": {"line": 35, "column": 0}, "map": {"version":3,"sources":["file:///Users/qhai-dev/qhai-dev/galio/frontend/app/admin/components/app-initializer.tsx"],"sourcesContent":["\"use client\";\n\nimport { PropsWithChildren } from \"react\";\n\nexport default function AppInitializer({ children }: PropsWithChildren) {\n\t// app init context\n\treturn children;\n\n\treturn (\n\t\t<DirectionProvider dir={dir}>\n\t\t\t<ToastProvider>\n\t\t\t\t<TooltipProvider>{children}</TooltipProvider>\n\t\t\t</ToastProvider>\n\t\t</DirectionProvider>\n\t);\n}\n"],"names":[],"mappings":";;;;;AAAA;;AAIe,SAAS,eAAe,EAAE,QAAQ,EAAqB;IACrE,mBAAmB;IACnB,OAAO;;;AASR"}}]
-}

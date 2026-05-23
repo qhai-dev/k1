@@ -1,7 +1,0 @@
-{
-  "version": 3,
-  "sources": [],
-  "sections": [
-    {"offset": {"line": 3, "column": 0}, "map": {"version":3,"sources":["turbopack:///[project]/ozma/frontend/semi-design-pro/locales/ar-SA.json"],"sourcesContent":["{\"signin\":{\"title\":\"مرحبًا، لنبدأ!\",\"welcome\":\"👋 أهلاً بك! يرجى تسجيل الدخول للمتابعة.\",\"account\":\"الحساب\",\"placeholder-account\":\"أدخل بريدك الإلكتروني أو اسم الحساب أو رقم الهاتف\",\"error-account\":\"يرجى إدخال بريدك الإلكتروني أو اسم الحساب أو رقم الهاتف\",\"password\":\"كلمة المرور\",\"placeholder-password\":\"أدخل كلمة المرور\",\"error-password\":\"يرجى إدخال كلمة المرور\",\"login\":\"تسجيل الدخول\",\"select-identity-title\":\"اختر مؤسسة\",\"select-identity-desc\":\"لقد انضممت إلى {count} من المؤسسات. اختر واحدة\"},\"metadata\":{\"title\":\"الإدارة\",\"signin\":\"تسجيل الدخول\",\"dashboard\":\"لوحة التحكم\"},\"common\":{\"back\":\"رجوع\"},\"app\":{\"title\":\"Ozma Admin\"}}"],"names":[],"mappings":"AAAA"}},
-    {"offset": {"line": 3, "column": 658}, "map": {"version":3,"sources":[],"names":[],"mappings":"A"}}]
-}

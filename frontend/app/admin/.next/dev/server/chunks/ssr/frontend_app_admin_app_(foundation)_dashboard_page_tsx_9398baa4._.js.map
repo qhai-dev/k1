@@ -1,6 +1,0 @@
-{
-  "version": 3,
-  "sources": [],
-  "sections": [
-    {"offset": {"line": 4, "column": 0}, "map": {"version":3,"sources":["file:///Users/qhai-dev/qhai-dev/galio/frontend/app/admin/app/%28foundation%29/dashboard/page.tsx"],"sourcesContent":["import type { Metadata, ResolvingMetadata } from \"next\";\n\nimport { getTranslations } from \"next-intl/server\";\n\nexport async function generateMetadata(_parent: ResolvingMetadata): Promise<Metadata> {\n  const t = await getTranslations(\"metadata\");\n  return {\n    title: t(\"dashboard\"),\n  };\n}\n\nexport default function Page() {\n  return <div>dashboard</div>;\n}\n"],"names":[],"mappings":";;;;;;;AAEA;;;AAEO,eAAe,iBAAiB,OAA0B;IAC/D,MAAM,IAAI,MAAM,IAAA,seAAe,EAAC;IAChC,OAAO;QACL,OAAO,EAAE;IACX;AACF;AAEe,SAAS;IACtB,qBAAO,scAAC;kBAAI;;;;;;AACd"}}]
-}

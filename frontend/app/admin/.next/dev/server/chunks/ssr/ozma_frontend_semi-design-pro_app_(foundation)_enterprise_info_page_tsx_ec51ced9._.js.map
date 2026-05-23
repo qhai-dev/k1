@@ -1,6 +1,0 @@
-{
-  "version": 3,
-  "sources": [],
-  "sections": [
-    {"offset": {"line": 4, "column": 0}, "map": {"version":3,"sources":["file:///Users/qhai-dev/qhai-dev/ozma/frontend/semi-design-pro/app/%28foundation%29/enterprise/info/page.tsx"],"sourcesContent":["export default function Page() {\n  return <div>企业信息 设置</div>;\n}\n"],"names":[],"mappings":";;;;;;AAAe,SAAS;IACtB,qBAAO,8cAAC;kBAAI;;;;;;AACd"}}]
-}

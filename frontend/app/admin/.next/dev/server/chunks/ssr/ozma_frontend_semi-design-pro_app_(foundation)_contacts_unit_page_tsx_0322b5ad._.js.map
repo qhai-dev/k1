@@ -1,6 +1,0 @@
-{
-  "version": 3,
-  "sources": [],
-  "sections": [
-    {"offset": {"line": 4, "column": 0}, "map": {"version":3,"sources":["file:///Users/qhai-dev/qhai-dev/ozma/frontend/semi-design-pro/app/%28foundation%29/contacts/unit/page.tsx"],"sourcesContent":["export default function Page() {\n\treturn (\n\t\t<div className=\"flex flex-col gap-y-3 py-2\">\n\t\t\t<div className=\"w-ful h-11 bg-green-500\">单位管理 页面</div>\n\t\t</div>\n\t);\n}\n"],"names":[],"mappings":";;;;;;AAAe,SAAS;IACvB,qBACC,8cAAC;QAAI,WAAU;kBACd,cAAA,8cAAC;YAAI,WAAU;sBAA0B;;;;;;;;;;;AAG5C"}}]
-}

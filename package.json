@@ -1,13 +1,13 @@
 {
 	"name": "galio",
-	"private": true,
 	"type": "module",
 	"workspaces": [
-		"frontend/apis",
+		"frontend/*",
 		"frontend/app/*",
 		"frontend/library/*"
 	],
 	"devDependencies": {
-		"oxfmt": "^0.48.0"
+		"oxfmt": "^0.48.0",
+		"oxlint": "^1.66.0"
 	}
 }

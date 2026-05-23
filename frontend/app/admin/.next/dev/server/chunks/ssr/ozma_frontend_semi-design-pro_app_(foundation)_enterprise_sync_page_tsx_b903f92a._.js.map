@@ -1,6 +1,0 @@
-{
-  "version": 3,
-  "sources": [],
-  "sections": [
-    {"offset": {"line": 4, "column": 0}, "map": {"version":3,"sources":["file:///Users/qhai-dev/qhai-dev/ozma/frontend/semi-design-pro/app/%28foundation%29/enterprise/sync/page.tsx"],"sourcesContent":["export default function Page() {\n\treturn <div className=\"h-full w-full p-5\">组织架构数据同步</div>;\n}\n"],"names":[],"mappings":";;;;;;AAAe,SAAS;IACvB,qBAAO,8cAAC;QAAI,WAAU;kBAAoB;;;;;;AAC3C"}}]
-}

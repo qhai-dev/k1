@@ -1,6 +1,0 @@
-{
-  "version": 3,
-  "sources": [],
-  "sections": [
-    {"offset": {"line": 4, "column": 0}, "map": {"version":3,"sources":["file:///Users/qhai-dev/qhai-dev/ozma/frontend/semi-design-pro/app/%28foundation%29/dashboard/page.tsx"],"sourcesContent":["import type { Metadata, ResolvingMetadata } from \"next\";\n\nimport { getTranslations } from \"next-intl/server\";\n\nexport async function generateMetadata(parent: ResolvingMetadata): Promise<Metadata> {\n\tconst t = await getTranslations(\"metadata\");\n\treturn {\n\t\ttitle: t(\"dashboard\"),\n\t};\n}\n\nexport default function Page() {\n\treturn <div className=\"h-full w-full p-5\">工作台 页面</div>;\n}\n"],"names":[],"mappings":";;;;;;;AAEA;;;AAEO,eAAe,iBAAiB,MAAyB;IAC/D,MAAM,IAAI,MAAM,IAAA,8eAAe,EAAC;IAChC,OAAO;QACN,OAAO,EAAE;IACV;AACD;AAEe,SAAS;IACvB,qBAAO,8cAAC;QAAI,WAAU;kBAAoB;;;;;;AAC3C"}}]
-}
