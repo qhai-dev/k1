@@ -1,6 +1,6 @@
 {
 	"name": "galio",
-	"type": "module",
+	"private": true,
 	"workspaces": [
 		"frontend/*",
 		"frontend/app/*",
