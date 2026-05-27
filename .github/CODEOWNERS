@@ -1,0 +1,6 @@
+# CODEOWNERS for the Kubase repository
+*          @qhai-dev
+/backend/  @qhai-dev
+/deeply/   @qhai-dev
+/docs/     @qhai-dev
+/frontend/ @qhai-dev
