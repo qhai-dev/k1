@@ -1,11 +1,7 @@
 import type { Metadata } from "next";
 import { getLocale, getTranslations } from "next-intl/server";
 import { PropsWithChildren } from "react";
-import {
-	ToastProvider,
-	DirectionProvider,
-	TooltipProvider,
-} from "@kubase/design-component";
+import { ToastProvider, DirectionProvider, TooltipProvider } from "@kubase/design-component";
 // import { languages } from "@/i18n/language";
 
 import TanstackQueryProvider from "@/contexts/tanstack-query-context";
@@ -42,9 +38,7 @@ export default async function Layout({ children }: PropsWithChildren) {
 							<AppInitializer>
 								<DirectionProvider dir={dir}>
 									<ToastProvider>
-										<TooltipProvider>
-											{children}
-										</TooltipProvider>
+										<TooltipProvider>{children}</TooltipProvider>
 									</ToastProvider>
 								</DirectionProvider>
 							</AppInitializer>

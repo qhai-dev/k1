@@ -30,7 +30,6 @@ func New() *App {
 	return app
 }
 
-// app construct hook
 func (app *App) OnStart(hook func()) {
 	app.startHooks = append(app.startHooks, hook)
 }
