@@ -8,8 +8,6 @@ import TanstackQueryProvider from "@/contexts/tanstack-query-context";
 import NextThemeProvider from "@/contexts/next-theme-context";
 import NextIntlProvider from "@/contexts/next-intl-context";
 
-import AppInitializer from "@/components/app-initializer";
-
 import "./globals.css";
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -35,13 +33,11 @@ export default async function Layout({ children }: PropsWithChildren) {
 				<NextIntlProvider>
 					<NextThemeProvider>
 						<TanstackQueryProvider>
-							<AppInitializer>
-								<DirectionProvider dir={dir}>
-									<ToastProvider>
-										<TooltipProvider>{children}</TooltipProvider>
-									</ToastProvider>
-								</DirectionProvider>
-							</AppInitializer>
+							<DirectionProvider dir={dir}>
+								<ToastProvider>
+									<TooltipProvider>{children}</TooltipProvider>
+								</ToastProvider>
+							</DirectionProvider>
 						</TanstackQueryProvider>
 					</NextThemeProvider>
 				</NextIntlProvider>
