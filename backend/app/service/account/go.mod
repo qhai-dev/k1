@@ -1,4 +1,4 @@
-module github.com/qhai-dev/kubase/service/account
+module github.com/qhai-dev/kairo/service/account
 
 go 1.26.1
 

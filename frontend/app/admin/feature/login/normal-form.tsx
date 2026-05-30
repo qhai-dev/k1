@@ -1,18 +1,11 @@
 "use client";
 
+import { zodResolver } from "@hookform/resolvers/zod";
 import { useTranslations } from "next-intl";
 import { Controller, useForm } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 
-import {
-	Button,
-	Field,
-	FieldError,
-	FieldGroup,
-	FieldLabel,
-	Input,
-} from "@kubase/design-component";
+import { Button, Field, FieldError, FieldGroup, FieldLabel, Input } from "@kairo/design-component";
 
 export function NormalForm() {
 	const t = useTranslations("signin");
@@ -39,10 +32,7 @@ export function NormalForm() {
 	}
 
 	return (
-		<form
-			onSubmit={form.handleSubmit(onSubmit)}
-			className="flex flex-col gap-y-4"
-		>
+		<form onSubmit={form.handleSubmit(onSubmit)} className="flex flex-col gap-y-4">
 			<FieldGroup>
 				<Controller
 					name="account"
@@ -55,9 +45,7 @@ export function NormalForm() {
 								aria-invalid={fieldState.invalid}
 								placeholder={t("placeholder-account")}
 							/>
-							{fieldState.invalid && (
-								<FieldError errors={[fieldState.error]} />
-							)}
+							{fieldState.invalid && <FieldError errors={[fieldState.error]} />}
 						</Field>
 					)}
 				/>
@@ -72,9 +60,7 @@ export function NormalForm() {
 								aria-invalid={fieldState.invalid}
 								placeholder={t("placeholder-password")}
 							/>
-							{fieldState.invalid && (
-								<FieldError errors={[fieldState.error]} />
-							)}
+							{fieldState.invalid && <FieldError errors={[fieldState.error]} />}
 						</Field>
 					)}
 				/>

@@ -1,12 +1,12 @@
+import { DirectionProvider, ToastProvider, TooltipProvider } from "@kairo/design-component";
 import type { Metadata } from "next";
 import { getLocale, getTranslations } from "next-intl/server";
 import { PropsWithChildren } from "react";
-import { ToastProvider, DirectionProvider, TooltipProvider } from "@kubase/design-component";
 // import { languages } from "@/i18n/language";
 
-import TanstackQueryProvider from "@/contexts/tanstack-query-context";
-import NextThemeProvider from "@/contexts/next-theme-context";
 import NextIntlProvider from "@/contexts/next-intl-context";
+import NextThemeProvider from "@/contexts/next-theme-context";
+import TanstackQueryProvider from "@/contexts/tanstack-query-context";
 
 import "./globals.css";
 

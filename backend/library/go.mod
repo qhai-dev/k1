@@ -1,4 +1,4 @@
-module github.com/qhai-dev/kubase/library
+module github.com/qhai-dev/kairo/library
 
 go 1.26.1
 

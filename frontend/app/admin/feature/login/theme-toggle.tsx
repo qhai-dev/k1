@@ -1,18 +1,14 @@
 "use client";
 
+import { Button } from "@kairo/design-component";
 import { useTheme } from "next-themes";
-import { Button } from "@kubase/design-component";
 
 export function ThemeToggle() {
 	const { theme, setTheme } = useTheme();
 
 	function onThemeChange() {
 		if (theme === "system") {
-			const systemTheme = window.matchMedia(
-				"(prefers-color-scheme: dark)",
-			).matches
-				? "dark"
-				: "light";
+			const systemTheme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
 			setTheme(systemTheme === "dark" ? "light" : "dark");
 		} else {
 			setTheme(theme === "dark" ? "light" : "dark");

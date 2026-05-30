@@ -3,4 +3,4 @@ info() {
 }
 
 
-info "=== Kubase Setup ==="
+info "=== kairo Setup ==="

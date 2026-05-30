@@ -1,6 +1,5 @@
 "use client";
 
-import { useLocale } from "next-intl";
 import {
 	Button,
 	DropdownMenu,
@@ -8,7 +7,8 @@ import {
 	DropdownMenuItem,
 	DropdownMenuTrigger,
 	Globe,
-} from "@kubase/design-component";
+} from "@kairo/design-component";
+import { useLocale } from "next-intl";
 
 import { languages, Locale, locales } from "@/i18n/language";
 

@@ -5,8 +5,8 @@ package main
 
 import (
 	"github.com/google/wire"
-	"github.com/qhai-dev/kubase/library/framework"
-	"github.com/qhai-dev/kubase/service/account/rpc"
+	"github.com/qhai-dev/kairo/library/framework"
+	"github.com/qhai-dev/kairo/service/account/rpc"
 )
 
 func initialize(*framework.App) error {

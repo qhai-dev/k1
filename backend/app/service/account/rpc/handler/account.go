@@ -3,7 +3,7 @@ package handler
 import (
 	"fmt"
 
-	"github.com/qhai-dev/kubase/library/framework"
+	"github.com/qhai-dev/kairo/library/framework"
 )
 
 type AccountService struct {

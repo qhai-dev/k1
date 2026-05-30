@@ -4,14 +4,8 @@ import { Bot, SquareTerminal } from "lucide-react";
 
 import { NavMain } from "@/components/biz/nav-main";
 
+import { Sidebar, SidebarContent, SidebarHeader, SidebarInset, SidebarProvider } from "@kairo/design-component";
 import { PropsWithChildren } from "react";
-import {
-	SidebarInset,
-	SidebarProvider,
-	Sidebar,
-	SidebarContent,
-	SidebarHeader,
-} from "@kubase/design-component";
 const data = {
 	user: {
 		name: "shadcn",

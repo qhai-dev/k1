@@ -1,7 +1,7 @@
 @import "tailwindcss";
-@import "@kubase/design-component/styles.css";
+@import "@kairo/design-component/styles.css";
 
-@source '../node_modules/@kubase/design-component';
+@source '../node_modules/@kairo/design-component';
 
 @custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
 
@@ -124,10 +124,8 @@
 	--color-mask: var(--mask);
 
 	--color-destructive: var(--destructive);
-	--color-input-primary: var(--input-primary)
-		/* rgb(255 255 255/0) , rgb(16 24 40/0.08) */;
-	--color-input-destructive: var(--input-destructive)
-		/* rgb(255 255 255/0) , rgb(16 24 40/0.08) */;
+	--color-input-primary: var(--input-primary) /* rgb(255 255 255/0) , rgb(16 24 40/0.08) */;
+	--color-input-destructive: var(--input-destructive) /* rgb(255 255 255/0) , rgb(16 24 40/0.08) */;
 	--color-input-placeholder: var(--input-placeholder);
 	--color-accent: var(--accent);
 
@@ -140,8 +138,7 @@
   --color-panda-danger: var(--panda-color-danger); */
 	--color-background-containerd: var(--background-containerd);
 
-	--shadow-layout:
-		0 0 5px rgba(0, 0, 0, 0.05), 0 0 2px -1px rgba(0, 0, 0, 0.03);
+	--shadow-layout: 0 0 5px rgba(0, 0, 0, 0.05), 0 0 2px -1px rgba(0, 0, 0, 0.03);
 
 	--color-border: var(--color-border);
 }

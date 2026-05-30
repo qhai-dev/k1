@@ -1,12 +1,6 @@
 "use client";
 
-import {
-	Folder,
-	MoreHorizontal,
-	Share,
-	Trash2,
-	type LucideIcon,
-} from "lucide-react";
+import { Folder, MoreHorizontal, Share, Trash2, type LucideIcon } from "lucide-react";
 
 import {
 	DropdownMenu,
@@ -23,7 +17,7 @@ import {
 	SidebarMenuButton,
 	SidebarMenuItem,
 	useSidebar,
-} from "@kubase/design-component";
+} from "@kairo/design-component";
 
 export function NavProjects({
 	projects,

@@ -1,6 +1,6 @@
 package main
 
-import "github.com/qhai-dev/kubase/library/framework"
+import "github.com/qhai-dev/kairo/library/framework"
 
 func main() {
 	app := framework.New()

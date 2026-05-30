@@ -13,7 +13,7 @@ import {
 	SidebarMenuSub,
 	SidebarMenuSubButton,
 	SidebarMenuSubItem,
-} from "@kubase/design-component";
+} from "@kairo/design-component";
 
 export function NavMain({
 	items,
