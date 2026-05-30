@@ -4,5 +4,6 @@ use (
 	./backend/apis
 	./backend/app/admin/manager
 	./backend/app/service/account
+	./backend/app/service/member
 	./backend/library
 )
