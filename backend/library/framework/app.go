@@ -2,7 +2,6 @@ package framework
 
 import (
 	"context"
-	"fmt"
 	"net/http"
 	"sync"
 
@@ -17,7 +16,8 @@ type App struct {
 	rs   *http.Server
 	conf *viper.Viper
 
-	startHooks []func()
+	startHooks    []func()
+	shutdownHooks []func()
 
 	mu sync.Mutex
 }
@@ -27,19 +27,34 @@ func New() *App {
 		ctx: context.Background(),
 	}
 
+	// 初始化 conf
+	// 初始化 logger
+	// 初始化 rpc / rest
+	//
+
 	return app
 }
 
-func (app *App) OnStart(hook func()) {
+func (app *App) Run() {
+	err := app.runStartHooks()
+	if err != nil {
+		panic(err)
+	}
+}
+
+func (app *App) RegisterStartHooks(hook func()) {
 	app.startHooks = append(app.startHooks, hook)
 }
 
-func (app *App) Run() {
-	app.runStartShutdown(app.ctx)
+func (app *App) RegisterShutdownHooks(hook func()) {
+	app.shutdownHooks = append(app.shutdownHooks, hook)
 }
 
 func (app *App) Shutdown(ctx context.Context) error {
-	fmt.Println("appliaction run stop")
+	err := app.runShutdownHooks()
+	if err != nil {
+		return err
+	}
 
 	return nil
 }
@@ -52,14 +67,9 @@ func (app *App) runStartHooks() error {
 	return nil
 }
 
-func (app *App) runStartShutdown(ctx context.Context) error {
-
-	app.runStartHooks()
-
-	err := app.Shutdown(ctx)
-	if err != nil {
-		return err
+func (app *App) runShutdownHooks() error {
+	for _, hook := range app.shutdownHooks {
+		hook()
 	}
-
 	return nil
 }
