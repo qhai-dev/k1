@@ -1,0 +1,4 @@
+packages:
+    - "frontend/app/*"
+    - "frontend/kapis"
+    - "frontend/library/*"

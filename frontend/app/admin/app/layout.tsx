@@ -1,4 +1,4 @@
-import { DirectionProvider, ToastProvider, TooltipProvider } from "@kairo/design-component";
+import { DirectionProvider, ToastProvider, TooltipProvider } from "@kairo/shadcn-semi";
 import type { Metadata } from "next";
 import { getLocale, getTranslations } from "next-intl/server";
 import { PropsWithChildren } from "react";

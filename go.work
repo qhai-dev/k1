@@ -1,7 +1,7 @@
 go 1.26.1
 
 use (
-	./backend/apis
+	./backend/kapis
 	./backend/app/admin/manager
 	./backend/app/admin/member
 	./backend/app/service/account

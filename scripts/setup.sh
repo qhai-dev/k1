@@ -3,4 +3,6 @@ info() {
 }
 
 
-info "=== kairo Setup ==="
+info "1"
+
+info "2"

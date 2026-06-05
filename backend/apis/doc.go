@@ -1,2 +1,0 @@
-// proto apis
-package apis

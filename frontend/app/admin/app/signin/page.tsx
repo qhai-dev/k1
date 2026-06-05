@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 import { setLocale } from "@/i18n/server";
-import { Separator, Text, Title } from "@kairo/design-component";
+import { Separator, Text, Title } from "@kairo/shadcn-semi";
 import { Locale, useTranslations } from "next-intl";
 import { getTranslations } from "next-intl/server";
 
