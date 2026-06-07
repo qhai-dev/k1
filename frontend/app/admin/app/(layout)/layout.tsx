@@ -1,11 +1,17 @@
-"use client";
+"use client"
+import {
+	Sidebar,
+	SidebarContent,
+	SidebarFooter,
+	SidebarHeader,
+	SidebarInset,
+	SidebarProvider,
+} from "@kairo/shadcn-semi"
+import { Bot, SquareTerminal } from "lucide-react"
+import { PropsWithChildren } from "react"
 
-import { Bot, SquareTerminal } from "lucide-react";
+import { NavMain } from "@/components/biz/nav-main"
 
-import { NavMain } from "@/components/biz/nav-main";
-
-import { Sidebar, SidebarContent, SidebarHeader, SidebarInset, SidebarProvider } from "@kairo/design-component";
-import { PropsWithChildren } from "react";
 const data = {
 	user: {
 		name: "shadcn",
@@ -57,21 +63,21 @@ const data = {
 			],
 		},
 	],
-};
+}
 
 export default function Layout({ children }: PropsWithChildren) {
 	return (
-		<SidebarProvider>
-			<Sidebar variant="inset">
-				<SidebarHeader>header</SidebarHeader>
+		<SidebarProvider className="bg-background">
+			<Sidebar variant="inset" className="bg-background">
+				<SidebarHeader>siderbar header</SidebarHeader>
 				<SidebarContent>
 					<NavMain items={data.navMain} />
 				</SidebarContent>
+				<SidebarFooter>siderbar footer</SidebarFooter>
 			</Sidebar>
-
 			<SidebarInset>
-				<div className=" flex-1 min-w-0 bg-background">{children}</div>
+				<div className="bg-foreground min-w-0 flex-1">{children}</div>
 			</SidebarInset>
 		</SidebarProvider>
-	);
+	)
 }

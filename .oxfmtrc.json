@@ -1,7 +1,11 @@
 {
 	"$schema": "./node_modules/oxfmt/configuration_schema.json",
-	"ignorePatterns": ["backend/**", "docs/**", "deploy/**", "*.md"],
+	"ignorePatterns": ["backend/**", "helm/**"],
 	"printWidth": 120,
 	"useTabs": true,
-	"tabWidth": 4
+	"tabWidth": 4,
+	"semi": false,
+	"sortPackageJson": true,
+	"sortImports": true,
+	"sortTailwindcss": true
 }

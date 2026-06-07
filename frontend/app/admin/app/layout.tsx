@@ -1,31 +1,32 @@
-import { DirectionProvider, ToastProvider, TooltipProvider } from "@kairo/shadcn-semi";
-import type { Metadata } from "next";
-import { getLocale, getTranslations } from "next-intl/server";
-import { PropsWithChildren } from "react";
+import { DirectionProvider, ToastProvider, TooltipProvider } from "@kairo/shadcn-semi"
+import type { Metadata } from "next"
+import { getLocale, getTranslations } from "next-intl/server"
+import { PropsWithChildren } from "react"
 // import { languages } from "@/i18n/language";
 
-import NextIntlProvider from "@/contexts/next-intl-context";
-import NextThemeProvider from "@/contexts/next-theme-context";
-import TanstackQueryProvider from "@/contexts/tanstack-query-context";
+import NextIntlProvider from "@/contexts/next-intl-context"
+import NextThemeProvider from "@/contexts/next-theme-context"
+import TanstackQueryProvider from "@/contexts/tanstack-query-context"
 
-import "./globals.css";
+import "./globals.css"
 
 export async function generateMetadata(): Promise<Metadata> {
-	const t = await getTranslations("app");
+	const t = await getTranslations("app")
+
 	return {
 		title: {
 			template: `%s-${t("title")}`,
 			default: t("title"),
 		},
-	};
+	}
 }
 
-type Direction = "ltr" | "rtl";
+// type Direction = "ltr" | "rtl";
 
 export default async function Layout({ children }: PropsWithChildren) {
-	const lang = await getLocale();
+	const lang = await getLocale()
 	// const { dir } = languages[locale];
-	const dir: Direction = "ltr";
+	const dir = "ltr"
 
 	return (
 		<html lang={lang} dir={dir} suppressHydrationWarning>
@@ -33,7 +34,7 @@ export default async function Layout({ children }: PropsWithChildren) {
 				<NextIntlProvider>
 					<NextThemeProvider>
 						<TanstackQueryProvider>
-							<DirectionProvider dir={dir}>
+							<DirectionProvider direction={dir}>
 								<ToastProvider>
 									<TooltipProvider>{children}</TooltipProvider>
 								</ToastProvider>
@@ -43,5 +44,5 @@ export default async function Layout({ children }: PropsWithChildren) {
 				</NextIntlProvider>
 			</body>
 		</html>
-	);
+	)
 }

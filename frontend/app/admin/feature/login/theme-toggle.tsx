@@ -1,7 +1,6 @@
 "use client";
-
-import { Button } from "@kairo/design-component";
 import { useTheme } from "next-themes";
+import { Button } from "@kairo/shadcn-semi";
 
 export function ThemeToggle() {
 	const { theme, setTheme } = useTheme();
@@ -14,13 +13,10 @@ export function ThemeToggle() {
 			setTheme(theme === "dark" ? "light" : "dark");
 		}
 	}
-
+	// theme="outline"
+	// className="hover:bg-hover-0 size-8 rounded-lg border-none p-1.5 text-black dark:text-white"
 	return (
-		<Button
-			theme="outline"
-			className="hover:bg-hover-0 size-8 rounded-lg border-none p-1.5 text-black dark:text-white"
-			onClick={onThemeChange}
-		>
+		<Button variant="ghost" onClick={onThemeChange}>
 			<svg
 				xmlns="http://www.w3.org/2000/svg"
 				width="24"

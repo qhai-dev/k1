@@ -1,3 +1,5 @@
+import { DirectionProvider, useDirection } from "@base-ui/react";
+
 export { Button } from "./components/button";
 
 export { toast, ToastProvider } from "./components/toast";
@@ -27,8 +29,6 @@ export { Globe } from "./icon";
 
 export { Separator } from "./components/separator";
 
-export { DirectionProvider, useDirection } from "./components/direction";
-
 export {
 	Sidebar,
 	SidebarContent,
@@ -56,9 +56,6 @@ export {
 	useSidebar,
 } from "./components/sidebar";
 
-export {
-	Tooltip,
-	TooltipContent,
-	TooltipProvider,
-	TooltipTrigger,
-} from "./components/tooltip";
+export { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "./components/tooltip";
+
+export { DirectionProvider, useDirection };

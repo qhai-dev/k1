@@ -1,11 +1,10 @@
 "use client";
-
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useTranslations } from "next-intl";
 import { Controller, useForm } from "react-hook-form";
 import { z } from "zod";
 
-import { Button, Field, FieldError, FieldGroup, FieldLabel, Input } from "@kairo/design-component";
+import { Button, Field, FieldError, FieldGroup, FieldLabel, Input } from "@kairo/shadcn-semi";
 
 export function NormalForm() {
 	const t = useTranslations("signin");

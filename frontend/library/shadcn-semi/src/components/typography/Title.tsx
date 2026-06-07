@@ -1,7 +1,7 @@
-import { cva, type VariantProps } from "class-variance-authority";
-import { Slot } from "radix-ui";
-import * as React from "react";
+"use client";
 
+import { cva, type VariantProps } from "class-variance-authority";
+import * as React from "react";
 import { cn } from "../../lib/utils";
 
 const titleVariants = cva("text-text-0 font-semibold", {
@@ -20,23 +20,10 @@ const titleVariants = cva("text-text-0 font-semibold", {
 	},
 });
 
-type TitleProps = React.ComponentProps<"h1"> &
-	VariantProps<typeof titleVariants> & { asChild?: boolean };
+type TitleProps = React.ComponentProps<"h1"> & VariantProps<typeof titleVariants>;
 
-export function Title({
-	className,
-	heading,
-	children,
-	asChild = false,
-}: TitleProps) {
-	const Comp = asChild ? Slot.Root : `h${heading}`;
+export function Title({ className, heading, children }: TitleProps) {
+	// const Comp = `h${heading}`;
 
-	return (
-		<Comp
-			data-slot="title"
-			className={cn(titleVariants({ className, heading }))}
-		>
-			{children}
-		</Comp>
-	);
+	return <h1 className={cn(titleVariants({ className, heading }))}>{children}</h1>;
 }

@@ -7,10 +7,10 @@ import {
 	DropdownMenuItem,
 	DropdownMenuTrigger,
 	Globe,
-} from "@kairo/design-component";
-import { useLocale } from "next-intl";
+} from "@kairo/shadcn-semi";
+import { useLocale, Locale } from "next-intl";
 
-import { languages, Locale, locales } from "@/i18n/language";
+import { languages, locales } from "@/i18n/language";
 
 type Props = {
 	action: (locale: Locale) => Promise<void>;
@@ -18,20 +18,21 @@ type Props = {
 
 export function LocaleSwitcher({ action }: Props) {
 	const locale = useLocale();
-
+	// className="text-text-primary border-highlight-1 hover:bg-hover-0 flex items-center gap-1 rounded-lg px-2.5 py-1.5 text-[13px] font-medium"
 	return (
 		<DropdownMenu>
-			<DropdownMenuTrigger asChild>
-				<div className="flex w-56 items-center justify-end">
-					<Button
-						theme="outline"
-						className="text-text-primary border-highlight-1 hover:bg-hover-0 flex items-center gap-1 rounded-lg px-2.5 py-1.5 text-[13px] font-medium"
-					>
-						<Globe size={20} />
-						{languages[locale].name}
-					</Button>
-				</div>
-			</DropdownMenuTrigger>
+			<DropdownMenuTrigger
+				nativeButton={false}
+				render={
+					<div className="flex w-56 items-center justify-end">
+						<Button variant="ghost">
+							<Globe size={20} />
+							{languages[locale]?.name}
+						</Button>
+					</div>
+				}
+			></DropdownMenuTrigger>
+
 			<DropdownMenuContent
 				sideOffset={8}
 				align="end"
@@ -43,7 +44,7 @@ export function LocaleSwitcher({ action }: Props) {
 						key={index}
 						onClick={() => action(item)}
 					>
-						{languages[item].name}
+						{languages[item]?.name}
 					</DropdownMenuItem>
 				))}
 			</DropdownMenuContent>

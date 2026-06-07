@@ -1,5 +1,5 @@
 import { cva, type VariantProps } from "class-variance-authority";
-import { Slot } from "radix-ui";
+// import { Slot } from "radix-ui";
 import * as React from "react";
 
 import { cn } from "../../lib/utils";
@@ -24,22 +24,13 @@ const textVariants = cva("", {
 	},
 });
 
-type TextProps = React.ComponentProps<"span"> &
-	VariantProps<typeof textVariants> & { asChild?: boolean };
+type TextProps = React.ComponentProps<"span"> & VariantProps<typeof textVariants>;
 
-export function Text({
-	className,
-	children,
-	asChild = false,
-	type,
-}: TextProps) {
-	const Comp = asChild ? Slot.Root : "span";
+export function Text({ className, children, type }: TextProps) {
+	// const Comp = asChild ? Slot.Root : "span";
 	return (
-		<Comp
-			data-slot="text"
-			className={cn(textVariants({ className, type }))}
-		>
+		<span data-slot="text" className={cn(textVariants({ className, type }))}>
 			{children}
-		</Comp>
+		</span>
 	);
 }

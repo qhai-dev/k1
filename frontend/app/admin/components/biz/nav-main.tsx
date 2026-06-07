@@ -1,6 +1,6 @@
-"use client";
+"use client"
 
-import { ChevronRight, type LucideIcon } from "lucide-react";
+import { ChevronRight, type LucideIcon } from "lucide-react"
 
 // import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
 import {
@@ -13,21 +13,21 @@ import {
 	SidebarMenuSub,
 	SidebarMenuSubButton,
 	SidebarMenuSubItem,
-} from "@kairo/design-component";
+} from "@kairo/shadcn-semi"
 
 export function NavMain({
 	items,
 }: {
 	items: {
-		title: string;
-		url: string;
-		icon: LucideIcon;
-		isActive?: boolean;
+		title: string
+		url: string
+		icon: LucideIcon
+		isActive?: boolean
 		items?: {
-			title: string;
-			url: string;
-		}[];
-	}[];
+			title: string
+			url: string
+		}[]
+	}[]
 }) {
 	return (
 		<SidebarGroup>
@@ -35,7 +35,7 @@ export function NavMain({
 			<SidebarMenu>
 				{items.map((item) => (
 					<SidebarMenuItem>
-						<SidebarMenuButton asChild tooltip={item.title}>
+						<SidebarMenuButton tooltip={item.title}>
 							<a href={item.url}>
 								<item.icon />
 								<span>{item.title}</span>
@@ -50,7 +50,7 @@ export function NavMain({
 								<SidebarMenuSub>
 									{item.items?.map((subItem) => (
 										<SidebarMenuSubItem key={subItem.title}>
-											<SidebarMenuSubButton asChild>
+											<SidebarMenuSubButton>
 												<a href={subItem.url}>
 													<span>{subItem.title}</span>
 												</a>
@@ -64,5 +64,5 @@ export function NavMain({
 				))}
 			</SidebarMenu>
 		</SidebarGroup>
-	);
+	)
 }
