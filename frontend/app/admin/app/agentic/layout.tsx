@@ -12,18 +12,19 @@ import { PropsWithChildren } from "react"
 
 export default function Layout({ children }: PropsWithChildren) {
 	return (
-		<SidebarProvider>
-			<Sidebar variant="inset">
+		<SidebarProvider className="bg-background p-2">
+			<Sidebar>
 				<SidebarHeader>siderbar header</SidebarHeader>
-				<SidebarContent>
+				<SidebarContent className="w-full p-2">
 					<div>新建任务</div>
+					<div>搜索</div>
 					<div>技能</div>
-					<div>专家</div>
-					<div>应用</div>
 				</SidebarContent>
 				<SidebarFooter>siderbar footer</SidebarFooter>
 			</Sidebar>
-			<SidebarInset>{children}</SidebarInset>
+			<SidebarInset className="bg-foreground border-separator overflow-hidden rounded-2xl border">
+				{children}
+			</SidebarInset>
 		</SidebarProvider>
 	)
 }

@@ -1,35 +1,35 @@
-import type { Metadata } from "next";
-import { getLocale, getTranslations } from "next-intl/server";
-import { PropsWithChildren } from "react";
+import type { Metadata } from "next"
+import { getLocale, getTranslations } from "next-intl/server"
+import { PropsWithChildren } from "react"
 // import { languages } from "@/i18n/language";
 
-import NextIntlProvider from "@/contexts/next-intl-context";
+import AppInitializer from "@/components/app-initializer"
+import NextIntlProvider from "@/contexts/next-intl-context"
 
-import AppInitializer from "@/components/app-initializer";
-import "./globals.css";
+import "./globals.css"
 
 export async function generateMetadata(): Promise<Metadata> {
-  const t = await getTranslations("app");
+	const t = await getTranslations("app")
 
-  return {
-    title: {
-      template: `%s-${t("title")}`,
-      default: t("title"),
-    },
-  };
+	return {
+		title: {
+			template: `%s-${t("title")}`,
+			default: t("title"),
+		},
+	}
 }
 
 export default async function Layout({ children }: PropsWithChildren) {
-  const lang = await getLocale();
-  const dir = "ltr";
+	const lang = await getLocale()
+	const dir = "ltr"
 
-  return (
-    <html lang={lang} dir={dir} suppressHydrationWarning>
-      <body className="h-full select-auto overflow-hidden">
-        <NextIntlProvider>
-          <AppInitializer dir={dir}>{children}</AppInitializer>
-        </NextIntlProvider>
-      </body>
-    </html>
-  );
+	return (
+		<html lang={lang} dir={dir} suppressHydrationWarning>
+			<body className="h-full overflow-hidden select-auto">
+				<NextIntlProvider>
+					<AppInitializer dir={dir}>{children}</AppInitializer>
+				</NextIntlProvider>
+			</body>
+		</html>
+	)
 }

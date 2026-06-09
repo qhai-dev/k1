@@ -1,37 +1,32 @@
-import type { Metadata } from "next";
+import { Separator, Text, Title } from "@kairo/shadcn-semi"
+import type { Metadata } from "next"
+import { useTranslations, Locale } from "next-intl"
+import { getTranslations } from "next-intl/server"
 
-import { setLocale } from "@/i18n/server";
-import { Separator, Text, Title } from "@kairo/shadcn-semi";
-import { useTranslations, Locale } from "next-intl";
-import { getTranslations } from "next-intl/server";
-
-import { LocaleSwitcher } from "@/feature/login/locale-switcher";
-import { NormalForm } from "@/feature/login/normal-form";
-import { ThemeToggle } from "@/feature/login/theme-toggle";
+import { LocaleSwitcher } from "@/feature/login/locale-switcher"
+import { NormalForm } from "@/feature/login/normal-form"
+import { ThemeToggle } from "@/feature/login/theme-toggle"
+import { setLocale } from "@/i18n/server"
 
 export async function generateMetadata(): Promise<Metadata> {
-	const t = await getTranslations("metadata");
+	const t = await getTranslations("metadata")
 	return {
 		title: t("signin"),
-	};
+	}
 }
 
 export default function Page() {
-	const t = useTranslations("signin");
+	const t = useTranslations("signin")
 
 	async function onLocaleAction(locale: Locale) {
-		"use server";
-		await setLocale(locale);
+		"use server"
+		await setLocale(locale)
 	}
-
-	// async function onFormSubmitAction() {
-	// 	"use server";
-	// }
 
 	return (
 		<div className="bg-background box-border flex min-h-screen w-full justify-center p-6">
 			<div className="border-separator bg-foreground flex w-full shrink-0 flex-col rounded-2xl border p-6">
-				<div className="flex w-full items-center justify-end max-sm:hidden gap-1">
+				<div className="flex w-full items-center justify-end gap-1 max-sm:hidden">
 					<LocaleSwitcher action={onLocaleAction} />
 					<Separator orientation="vertical" />
 					<ThemeToggle />
@@ -47,5 +42,5 @@ export default function Page() {
 				</div>
 			</div>
 		</div>
-	);
+	)
 }
