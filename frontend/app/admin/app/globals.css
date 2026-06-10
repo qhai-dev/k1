@@ -6,19 +6,25 @@
 @custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
 
 @theme {
-	--color-background: var(--background);
-	--color-foreground: var(--foreground);
-	--color-separator: var(--separator);
+    --color-background: var(--background);
+    --color-foreground: var(--foreground);
+    --color-separator: var(--separator);
 }
 
 html[data-theme="dark"] {
-	--background: oklch(0.232 0.0057 285.95);
-	--foreground: oklch(12% 0.0015 253.83);
-	--separator: oklch(25% 0.0015 253.83);
+    /*--foreground: #0f0f0f;*/
+    --background: #1a1a1a;
+    --foreground: #000000;
+    /*--background: #000000;*/
+    /*--background: oklch(0.232 0.0057 285.95);*/
+    /*--foreground: oklch(12% 0.0015 253.83);*/
+    --separator: oklch(25% 0.0015 253.83);
 }
 
 html[data-theme="light"] {
-	--background: oklch(0.94 0.0071 268.55);
-	--foreground: oklch(97.02% 0.0015 253.83);
-	--separator: oklch(92% 0.0015 253.83);
+    --background: #f3f3f3;
+    --foreground: #ffffff;
+    /*--background: oklch(0.94 0.0071 268.55);*/
+    /*--foreground: oklch(97.02% 0.0015 253.83);*/
+    --separator: oklch(92% 0.0015 253.83);
 }
