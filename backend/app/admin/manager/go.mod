@@ -1,4 +1,4 @@
-module github.com/qhai-dev/kairo/admin/manager
+module github.com/qhai-dev/kairo/backend/app/admin/manager
 
 go 1.26.1
 

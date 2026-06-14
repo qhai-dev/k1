@@ -5,7 +5,7 @@ package main
 
 import (
 	"github.com/google/wire"
-	"github.com/qhai-dev/kairo/library/framework"
+	"github.com/qhai-dev/kairo/backend/library/framework"
 	"github.com/qhai-dev/kairo/service/member/application"
 	"github.com/qhai-dev/kairo/service/member/infra"
 	"github.com/qhai-dev/kairo/service/member/rpc"

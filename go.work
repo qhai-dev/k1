@@ -3,7 +3,6 @@ go 1.26.1
 use (
 	./backend/app/admin/manager
 	./backend/app/admin/member
-	./backend/app/service/account
 	./backend/app/service/agentic
 	./backend/app/service/member
 	./backend/kapis

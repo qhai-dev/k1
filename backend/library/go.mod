@@ -1,4 +1,4 @@
-module github.com/qhai-dev/kairo/library
+module github.com/qhai-dev/kairo/backend/library
 
 go 1.26.1
 

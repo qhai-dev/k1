@@ -7,7 +7,7 @@ import (
 	"os"
 	"sync"
 
-	"github.com/qhai-dev/kairo/library/framework/conf"
+	"github.com/qhai-dev/kairo/backend/library/framework/conf"
 	"github.com/spf13/viper"
 	"google.golang.org/grpc"
 )
