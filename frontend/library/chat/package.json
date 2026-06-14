@@ -10,13 +10,20 @@
         "test": "echo \"hello run test chat\""
     },
     "dependencies": {
+        "@floating-ui/dom": "^1.7.6",
         "@kairo/shadcn-semi": "workspace:*",
+        "@tiptap/extension-document": "^3.26.1",
+        "@tiptap/extension-mention": "^3.26.1",
+        "@tiptap/extension-paragraph": "^3.26.1",
+        "@tiptap/extension-text": "^3.26.1",
+        "@tiptap/extensions": "^3.26.1",
         "@tiptap/pm": "^3.26.1",
         "@tiptap/react": "^3.26.1",
-        "@tiptap/starter-kit": "^3.26.1",
+        "@tiptap/suggestion": "^3.26.1",
         "lucide-react": "^1.18.0",
         "react": "19.2.0",
-        "react-dom": "19.2.0"
+        "react-dom": "19.2.0",
+        "react-markdown": "^10.1.0"
     },
     "devDependencies": {
         "@tailwindcss/cli": "^4.2.1",

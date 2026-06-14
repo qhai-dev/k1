@@ -12,7 +12,7 @@ type Props = {
 }
 
 export function Conversation({ id }: Props) {
-    const [isShow] = useState(true)
+    const [isShow] = useState(false)
 
     console.log(id)
 
