@@ -1,0 +1,8 @@
+load("@gazelle//:def.bzl", "gazelle")
+
+# gazelle:exclude frontend
+# gazelle:exclude scripts
+gazelle(
+    name = "gazelle",
+    prefix = "github.com/qhai-dev/kairo",
+)

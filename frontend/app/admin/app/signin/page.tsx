@@ -24,8 +24,8 @@ export default function Page() {
 	}
 
 	return (
-		<div className="box-border flex min-h-screen w-full justify-center p-6">
-			<div className="border-separator flex w-full shrink-0 flex-col rounded-2xl border p-6">
+		<div className="bg-muted box-border flex min-h-screen w-full justify-center p-6">
+			<div className="bg-background flex w-full shrink-0 flex-col rounded-2xl p-6">
 				<div className="flex w-full items-center justify-end gap-1 max-sm:hidden">
 					<LocaleSwitcher action={onLocaleAction} />
 					<Separator orientation="vertical" />

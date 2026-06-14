@@ -1,66 +1,69 @@
-import { DirectionProvider, useDirection } from "@base-ui/react";
+import { DirectionProvider, useDirection } from "@base-ui/react"
+import type { TextDirection } from "@base-ui/react"
 
-import type { TextDirection } from "@base-ui/react";
+export { Button } from "./button"
 
-export { Button } from "./button";
+export { toast, ToastProvider } from "./toast"
 
-export { toast, ToastProvider } from "./toast";
+export { Title, Text } from "./typography"
 
-export { Title, Text } from "./typography";
+export * from "./dropdown"
 
-export * from "./dropdown";
-
-export { Input } from "./input";
-
-export {
-  Field,
-  FieldLabel,
-  FieldDescription,
-  FieldError,
-  FieldGroup,
-  FieldLegend,
-  FieldSeparator,
-  FieldSet,
-  FieldContent,
-  FieldTitle,
-} from "./form/Field";
-
-export { Separator } from "./separator";
+export { Input } from "./input"
 
 export {
-  Sidebar,
-  SidebarContent,
-  SidebarFooter,
-  SidebarGroup,
-  SidebarGroupAction,
-  SidebarGroupContent,
-  SidebarGroupLabel,
-  SidebarHeader,
-  SidebarInput,
-  SidebarInset,
-  SidebarMenu,
-  SidebarMenuAction,
-  SidebarMenuBadge,
-  SidebarMenuButton,
-  SidebarMenuItem,
-  SidebarMenuSkeleton,
-  SidebarMenuSub,
-  SidebarMenuSubButton,
-  SidebarMenuSubItem,
-  SidebarProvider,
-  SidebarRail,
-  SidebarSeparator,
-  SidebarTrigger,
-  useSidebar,
-} from "./sidebar";
+	Field,
+	FieldLabel,
+	FieldDescription,
+	FieldError,
+	FieldGroup,
+	FieldLegend,
+	FieldSeparator,
+	FieldSet,
+	FieldContent,
+	FieldTitle,
+} from "./form/Field"
+
+export { Separator } from "./separator"
 
 export {
-  Tooltip,
-  TooltipContent,
-  TooltipProvider,
-  TooltipTrigger,
-} from "./tooltip";
+	Sidebar,
+	SidebarContent,
+	SidebarFooter,
+	SidebarGroup,
+	SidebarGroupAction,
+	SidebarGroupContent,
+	SidebarGroupLabel,
+	SidebarHeader,
+	SidebarInput,
+	SidebarInset,
+	SidebarMenu,
+	SidebarMenuAction,
+	SidebarMenuBadge,
+	SidebarMenuButton,
+	SidebarMenuItem,
+	SidebarMenuSkeleton,
+	SidebarMenuSub,
+	SidebarMenuSubButton,
+	SidebarMenuSubItem,
+	SidebarProvider,
+	SidebarRail,
+	SidebarSeparator,
+	SidebarTrigger,
+	useSidebar,
+} from "./sidebar"
 
-export type Direction = TextDirection;
+export {
+	Tooltip,
+	TooltipContent,
+	TooltipProvider,
+	TooltipTrigger,
+} from "./tooltip"
 
-export { DirectionProvider, useDirection };
+export type Direction = TextDirection
+
+export { DirectionProvider, useDirection }
+
+export * from "./resizable"
+
+export * from "./scroll-area"
