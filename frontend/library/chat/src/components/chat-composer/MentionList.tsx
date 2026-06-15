@@ -1,6 +1,19 @@
+import {
+    DropdownMenu,
+    DropdownMenuContent,
+    DropdownMenuGroup,
+    DropdownMenuItem,
+    DropdownMenuLabel,
+    DropdownMenuPortal,
+    DropdownMenuSeparator,
+    DropdownMenuShortcut,
+    DropdownMenuSub,
+    DropdownMenuSubContent,
+    DropdownMenuSubTrigger,
+    DropdownMenuTrigger,
+} from "@kairo/shadcn-semi"
 import type { SuggestionProps } from "@tiptap/suggestion"
 import { useEffect, useImperativeHandle, useState, forwardRef } from "react"
-
 export interface MentionListRef {
     onKeyDown: (props: { event: KeyboardEvent }) => boolean
 }
@@ -52,19 +65,74 @@ export const MentionList = forwardRef(function (props: SuggestionProps, ref) {
 
     return (
         <div className="dropdown-menu">
-            {props.items.length ? (
-                props.items.map((item, index) => (
-                    <button
-                        className={index === selectedIndex ? "is-selected" : ""}
-                        key={index}
-                        onClick={() => selectItem(index)}
-                    >
-                        {item}
-                    </button>
-                ))
-            ) : (
-                <div className="item">No result</div>
-            )}
+            <DropdownMenu open={true}>
+                <DropdownMenuContent className="w-40" align="start">
+                    <DropdownMenuGroup>
+                        <DropdownMenuLabel>My Account</DropdownMenuLabel>
+                        <DropdownMenuItem>
+                            Profile
+                            <DropdownMenuShortcut>⇧⌘P</DropdownMenuShortcut>
+                        </DropdownMenuItem>
+                        <DropdownMenuItem>
+                            Billing
+                            <DropdownMenuShortcut>⌘B</DropdownMenuShortcut>
+                        </DropdownMenuItem>
+                        <DropdownMenuItem>
+                            Settings
+                            <DropdownMenuShortcut>⌘S</DropdownMenuShortcut>
+                        </DropdownMenuItem>
+                    </DropdownMenuGroup>
+                    <DropdownMenuSeparator />
+                    <DropdownMenuGroup>
+                        <DropdownMenuItem>Team</DropdownMenuItem>
+                        <DropdownMenuSub>
+                            <DropdownMenuSubTrigger>Invite users</DropdownMenuSubTrigger>
+                            <DropdownMenuPortal>
+                                <DropdownMenuSubContent>
+                                    <DropdownMenuItem>Email</DropdownMenuItem>
+                                    <DropdownMenuItem>Message</DropdownMenuItem>
+                                    <DropdownMenuSeparator />
+                                    <DropdownMenuItem>More...</DropdownMenuItem>
+                                </DropdownMenuSubContent>
+                            </DropdownMenuPortal>
+                        </DropdownMenuSub>
+                        <DropdownMenuItem>
+                            New Team
+                            <DropdownMenuShortcut>⌘+T</DropdownMenuShortcut>
+                        </DropdownMenuItem>
+                    </DropdownMenuGroup>
+                    <DropdownMenuSeparator />
+                    <DropdownMenuGroup>
+                        <DropdownMenuItem>GitHub</DropdownMenuItem>
+                        <DropdownMenuItem>Support</DropdownMenuItem>
+                        <DropdownMenuItem disabled>API</DropdownMenuItem>
+                    </DropdownMenuGroup>
+                    <DropdownMenuSeparator />
+                    <DropdownMenuGroup>
+                        <DropdownMenuItem>
+                            Log out
+                            <DropdownMenuShortcut>⇧⌘Q</DropdownMenuShortcut>
+                        </DropdownMenuItem>
+                    </DropdownMenuGroup>
+                </DropdownMenuContent>
+            </DropdownMenu>
         </div>
     )
 })
+
+/**
+ *
+ *  {props.items.length ? (
+     props.items.map((item, index) => (
+         <button
+             className={index === selectedIndex ? "is-selected" : ""}
+             key={index}
+             onClick={() => selectItem(index)}
+         >
+             {item}
+         </button>
+     ))
+ ) : (
+     <div className="item">No result</div>
+ )}
+ */
