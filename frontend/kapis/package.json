@@ -1,5 +1,4 @@
 {
-	"name": "@kairo/kapis",
-	"private": true,
-	"type": "module"
+    "name": "@kairo/kapis",
+    "private": true
 }
