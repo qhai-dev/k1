@@ -2,7 +2,7 @@
     "name": "@kairo/admin",
     "private": true,
     "scripts": {
-        "dev": "next dev",
+        "dev": "next dev -p 8080",
         "build": "next build",
         "start": "next start"
     },
@@ -10,7 +10,6 @@
         "@floating-ui/react": "^0.27.19",
         "@kairo/chat": "workspace:*",
         "@kairo/shadcn-semi": "workspace:*",
-        "@tanstack/react-form": "^1.33.0",
         "@tanstack/react-query": "^5.101.0",
         "@tiptap/extension-mathematics": "^3.26.1",
         "@tiptap/pm": "^3.26.1",
@@ -39,7 +38,6 @@
         "@types/react": "19.2.17",
         "@types/react-dom": "19.2.3",
         "babel-plugin-react-compiler": "^1.0.0",
-        "sass": "^1.101.0",
         "tailwindcss": "^4.3.0",
         "ts-node": "^10.9.2",
         "typescript": "^6.0.3"

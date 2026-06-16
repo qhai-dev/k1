@@ -6,7 +6,7 @@ import "../../styles/index.css"
 
 export function RootLayout({ children }: PropsWithChildren) {
     return (
-        <html lang="en">
+        <html lang="en" suppressHydrationWarning>
             <body className="h-full overflow-hidden select-auto">
                 <NextIntlProvider>
                     <NextThemesProvider>
