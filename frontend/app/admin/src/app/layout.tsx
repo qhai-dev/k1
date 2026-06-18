@@ -1,17 +1,16 @@
 import { PropsWithChildren } from "react"
 
+import "@/layers/app/styles/index.css"
 import {
     TanstackQueryProvider,
     NextIntlProvider,
     NextThemesProvider,
     ShadcnProvider,
-} from "./_providers"
+} from "@/layers/app/providers"
 
-import "./globals.css"
-
-export async function RootLayout({ children }: PropsWithChildren) {
+export default async function RootLayout({ children }: PropsWithChildren) {
     const locale = "zh-CN"
-    const dir = "lrt"
+    const dir = "ltr"
 
     return (
         <html lang={locale} dir={dir} suppressHydrationWarning>
@@ -19,7 +18,7 @@ export async function RootLayout({ children }: PropsWithChildren) {
                 <NextIntlProvider>
                     <NextThemesProvider>
                         <TanstackQueryProvider>
-                            <ShadcnProvider>{children}</ShadcnProvider>
+                            <ShadcnProvider dir={dir}>{children}</ShadcnProvider>
                         </TanstackQueryProvider>
                     </NextThemesProvider>
                 </NextIntlProvider>

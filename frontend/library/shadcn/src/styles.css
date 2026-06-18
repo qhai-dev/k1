@@ -1,0 +1,301 @@
+/*@import "tailwindcss";*/
+/*@import "tw-animate-css";*/
+
+/*@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));*/
+
+html[data-theme="light"] {
+    /*--design-primary: oklch(0.5554 0.237 260.8);*/
+    --primary: oklch(0.205 0 0);
+    --primary-foreground: oklch(0.985 0 0);
+
+    --background: oklch(0.145 0 0);
+    --foreground: oklch(0.985 0 0);
+    --card: oklch(0.145 0 0);
+    --card-foreground: oklch(0.985 0 0);
+    --popover: oklch(0.145 0 0);
+    --popover-foreground: oklch(0.985 0 0);
+    --primary: oklch(0.985 0 0);
+    --primary-foreground: oklch(0.205 0 0);
+    --secondary: oklch(0.269 0 0);
+    --secondary-foreground: oklch(0.985 0 0);
+    --muted: oklch(0.269 0 0);
+    --muted-foreground: oklch(0.708 0 0);
+    --accent: oklch(0.269 0 0);
+    --accent-foreground: oklch(0.985 0 0);
+    --destructive: oklch(0.6412 0.2299 30.99);
+    --destructive-foreground: rgba(254, 242, 237, 1);
+    --border: oklch(0.269 0 0);
+    --input: oklch(0.269 0 0);
+    --ring: oklch(0.439 0 0);
+    --chart-1: oklch(0.488 0.243 264.376);
+    --chart-2: oklch(0.696 0.17 162.48);
+    --chart-3: oklch(0.769 0.188 70.08);
+    --chart-4: oklch(0.627 0.265 303.9);
+    --chart-5: oklch(0.645 0.246 16.439);
+    --sidebar: oklch(0.205 0 0);
+    --sidebar-foreground: oklch(0.985 0 0);
+    --sidebar-primary: oklch(0.488 0.243 264.376);
+    --sidebar-primary-foreground: oklch(0.985 0 0);
+    --sidebar-accent: oklch(0.269 0 0);
+    --sidebar-accent-foreground: oklch(0.985 0 0);
+    --sidebar-border: oklch(0.269 0 0);
+    --sidebar-ring: oklch(0.439 0 0);
+
+    /* ========== 基础色 ========== */
+    --color-white: oklch(1 0 0);
+    --color-black: var(--semi-color-black);
+
+    /* ========== Primary 主色 ========== */
+    --color-primary: oklch(0.5554 0.237 260.8);
+    --color-primary-hover: oklch(0.5212 0.1946 258.2);
+    --color-primary-active: oklch(0.4523 0.1726 258.67);
+
+    --color-primary-disabled: oklch(0.205 0 0 / 0.4);
+    --color-primary-light-default: oklch(0.205 0 0 / 0.1);
+    --color-primary-light-hover: oklch(0.205 0 0 / 0.2);
+
+    --color-primary-light-active: oklch(0.8288 0.0875 246.41);
+
+    /* ========== Secondary 次要色 ========== */
+    --color-secondary: oklch(0.6498 0.167856 246.2072);
+    --color-secondary-hover: oklch(0.5681 0.151102 247.4945);
+    --color-secondary-active: oklch(0.4888 0.133099 248.4709);
+
+    --color-secondary-disabled: oklch(0.6498 0.167856 246.2072 / 0.4);
+    --color-secondary-light-default: oklch(0.6498 0.167856 246.2072 / 0.1);
+    --color-secondary-light-hover: oklch(0.6498 0.167856 246.2072 / 0.2);
+    --color-secondary-light-active: oklch(0.6498 0.167856 246.2072 / 0.3);
+
+    /* ========== Tertiary 第三色 ========== */
+    --color-tertiary: oklch(0.5425 0.0099 248.01);
+    --color-tertiary-hover: oklch(0.468 0.0123 248.09);
+    --color-tertiary-active: oklch(0.3918 0.0121 252.94);
+
+    --color-tertiary-light-default: oklch(0.5425 0.0099 248.01 / 0.1);
+    --color-tertiary-light-hover: oklch(0.5425 0.0099 248.01 / 0.2);
+    --color-tertiary-light-active: oklch(0.5425 0.0099 248.01 / 0.3);
+
+    /* ========== Danger 危险色 ========== */
+    --color-danger: oklch(0.6412 0.2299 30.99);
+    --color-danger-hover: oklch(0.5625 0.2112 30.07);
+    --color-danger-active: oklch(0.4868 0.1896 29.35);
+
+    --color-danger-light-default: oklch(0.6412 0.2299 30.99 / 0.1);
+    --color-danger-light-hover: oklch(0.6412 0.2299 30.99 / 0.2);
+
+    --color-danger-light-active: oklch(0.8401 0.0858 34.95);
+
+    /* ========== Warning 警告色 ========== */
+    --color-warning: oklch(0.7402 0.178668 57.2233);
+    --color-warning-hover: oklch(0.6303 0.1613 52.36);
+    --color-warning-active: oklch(0.5228 0.141761 48.2775);
+
+    --color-warning-light-default: oklch(0.7402 0.178668 57.2233 / 0.1);
+    --color-warning-light-hover: oklch(0.7402 0.178668 57.2233 / 0.2);
+
+    --color-warning-light-active: oklch(0.9019 0.0919 81.19);
+
+    /* ========== 功能色 ========== */
+    --color-focus-border: var(--semi-color-focus-border);
+    --color-disabled-text: oklch(0.2379 0.0089 255.6 / 35%);
+    --color-disabled-border: var(--semi-color-disabled-border);
+    --color-disabled-bg: oklch(0.93 0.0035 247.86);
+    --color-disabled-fill: var(--semi-color-disabled-fill);
+    --color-shadow: var(--semi-color-shadow);
+
+    /* ========== Fill 填充色 ========== */
+    --color-fill-0: oklch(0.3156 0.0121 258.37 / 5%);
+    --color-fill-1: oklch(0.3156 0.0121 258.37 / 9%);
+    --color-fill-2: oklch(0.3156 0.0121 258.37 / 13%);
+
+    /* ========== Border 边框 ========== */
+    --color-border: oklch(0.2379 0.0089 255.6 / 8%);
+
+    /* ========== Text 文字色 ========== */
+    --color-text-0: oklch(0.2379 0.0089 255.6);
+    --color-text-1: oklch(0.2379 0.0089 255.6);
+    --color-text-2: oklch(0.2379 0.0089 255.6);
+    --color-text-3: oklch(0.2379 0.0089 255.6);
+}
+
+html[data-theme="dark"] {
+    --design-primary: oklch(0.7202 0.1506 250.93);
+
+    --background: oklch(1 0 0);
+    --foreground: oklch(0.145 0 0);
+    --card: oklch(1 0 0);
+    --card-foreground: oklch(0.145 0 0);
+    --popover: oklch(1 0 0);
+    --popover-foreground: oklch(0.145 0 0);
+    --primary: oklch(0.205 0 0);
+    --primary-foreground: oklch(0.985 0 0);
+    --secondary: oklch(0.97 0 0);
+    --secondary-foreground: oklch(0.205 0 0);
+    --muted: oklch(0.97 0 0);
+    --muted-foreground: oklch(0.556 0 0);
+    --accent: oklch(0.97 0 0);
+    --accent-foreground: oklch(0.205 0 0);
+    --destructive: oklch(0.7137 0.1737 31.7);
+    --destructive-foreground: rgba(252, 114, 90, 0.2);
+    --border: oklch(0.922 0 0);
+    --input: oklch(0.922 0 0);
+    --ring: oklch(0.708 0 0);
+    --chart-1: oklch(0.646 0.222 41.116);
+    --chart-2: oklch(0.6 0.118 184.704);
+    --chart-3: oklch(0.398 0.07 227.392);
+    --chart-4: oklch(0.828 0.189 84.429);
+    --chart-5: oklch(0.769 0.188 70.08);
+    /* --radius: 0.625rem; */
+    --sidebar: oklch(0.985 0 0);
+    --sidebar-foreground: oklch(0.145 0 0);
+    --sidebar-primary: oklch(0.205 0 0);
+    --sidebar-primary-foreground: oklch(0.985 0 0);
+    --sidebar-accent: oklch(0.97 0 0);
+    --sidebar-accent-foreground: oklch(0.205 0 0);
+    --sidebar-border: oklch(0.922 0 0);
+    --sidebar-ring: oklch(0.708 0 0);
+
+    /* ========== Primary 主色 ========== */
+    --semi-color-primary: oklch(0.205 0 0);
+    --semi-color-primary-hover: oklch(0.205 0 0 // 0.8);
+    --semi-color-primary-active: oklch(0.205 0 0 // 0.6);
+    --semi-color-primary-disabled: oklch(0.205 0 0 // 0.4);
+    --semi-color-primary-light-default: oklch(0.205 0 0 // 0.1);
+    --semi-color-primary-light-hover: oklch(0.205 0 0 // 0.2);
+    --semi-color-primary-light-active: oklch(0.205 0 0 // 0.3);
+    /* ========== Text 文字色 ========== */
+    --color-text-0: oklch(0.2379 0.0089 255.6);
+    --color-text-1: oklch(0.2379 0.0089 255.6);
+    --color-text-2: oklch(0.2379 0.0089 255.6);
+    --color-text-3: oklch(0.2379 0.0089 255.6);
+
+    --color-fill-0: oklch(1 0 0 / 12%);
+    --color-fill-1: oklch(1 0 0 / 16%);
+    --color-fill-2: oklch(1 0 0 / 20%);
+}
+
+@theme {
+    /* ========== 基础色 ========== */
+    --color-color-white: var(--color-white);
+    --color-color-black: var(--color-black);
+
+    /* ========== Primary 主色 ========== */
+    --color-color-primary: var(--color-primary);
+    --color-color-primary-hover: var(--color-primary-hover);
+    --color-color-primary-active: var(--color-primary-active);
+    --color-color-primary-disabled: var(--color-primary-disabled);
+    --color-color-primary-light-default: var(--color-primary-light-default);
+    --color-color-primary-light-hover: var(--color-primary-light-hover);
+    --color-color-primary-light-active: var(--color-primary-light-active);
+
+    /* ========== Secondary 次要色 ========== */
+    --color-color-secondary: var(--color-secondary);
+    --color-color-secondary-hover: var(--color-secondary-hover);
+    --color-color-secondary-active: var(--color-secondary-active);
+    --color-color-secondary-disabled: var(--color-secondary-disabled);
+    --color-color-secondary-light-default: var(--color-secondary-light-default);
+    --color-color-secondary-light-hover: var(--color-secondary-light-hover);
+    --color-color-secondary-light-active: var(--color-secondary-light-active);
+
+    /* ========== Tertiary 第三色 ========== */
+    --color-color-tertiary: var(--color-tertiary);
+    --color-color-tertiary-hover: var(--color-tertiary-hover);
+    --color-color-tertiary-active: var(--color-tertiary-active);
+    --color-color-tertiary-light-default: var(--color-tertiary-light-default);
+    --color-color-tertiary-light-hover: var(--color-tertiary-light-hover);
+    --color-color-tertiary-light-active: var(--color-tertiary-light-active);
+
+    /* ========== Danger 危险色 ========== */
+    --color-color-danger: var(--color-danger);
+    --color-color-danger-hover: var(--color-danger-hover);
+    --color-color-danger-active: var(--color-danger-active);
+    --color-color-danger-light-default: var(--color-danger-light-default);
+    --color-color-danger-light-hover: var(--color-danger-light-hover);
+    --color-color-danger-light-active: var(--color-danger-light-active);
+
+    /* ========== Warning 警告色 ========== */
+    --color-color-warning: var(--color-warning);
+    --color-color-warning-hover: var(--color-warning-hover);
+    --color-color-warning-active: var(--color-warning-active);
+    --color-color-warning-light-default: var(--color-warning-light-default);
+    --color-color-warning-light-hover: var(--color-warning-light-hover);
+    --color-color-warning-light-active: var(--color-warning-light-active);
+
+    /* ========== 功能色 ========== */
+    --color-color-focus-border: var(--color-focus-border);
+    --color-color-disabled-text: var(--color-disabled-text);
+    --color-color-disabled-border: var(--color-disabled-border);
+    --color-color-disabled-bg: var(--color-disabled-bg);
+    --color-color-disabled-fill: var(--color-disabled-fill);
+    --color-color-shadow: var(--color-shadow);
+
+    /* ========== Fill 填充色 ========== */
+    --color-color-fill-0: var(--color-fill-0);
+    --color-color-fill-1: var(--color-fill-1);
+    --color-color-fill-2: var(--color-fill-2);
+
+    /* ========== Border Radius 圆角 ========== */
+    --radius-border-radius-extra-small: var(--border-radius-extra-small);
+    --radius-border-radius-small: var(--border-radius-small);
+    --radius-border-radius-medium: var(--border-radius-medium);
+    --radius-border-radius-large: var(--border-radius-large);
+    --radius-border-radius-circle: var(--border-radius-circle);
+
+    /* ========== Border 边框 ========== */
+    --color-color-border: var(--color-border);
+
+    /* ========== Text 文字色 ========== */
+    --color-text-0: var(--color-text-0);
+    --color-text-1: var(--color-text-1);
+    --color-text-2: var(--color-text-2);
+    --color-text-3: var(--color-text-3);
+
+    --color-design-primary: var(--design-primary);
+
+    --color-background: var(--background);
+    --color-foreground: var(--foreground);
+    --color-card: var(--card);
+    --color-card-foreground: var(--card-foreground);
+    --color-popover: var(--popover);
+    --color-popover-foreground: var(--popover-foreground);
+    --color-primary: var(--primary);
+    --color-primary-foreground: var(--primary-foreground);
+    --color-secondary: var(--secondary);
+    --color-secondary-foreground: var(--secondary-foreground);
+    --color-muted: var(--muted);
+    --color-muted-foreground: var(--muted-foreground);
+    --color-accent: var(--accent);
+    --color-accent-foreground: var(--accent-foreground);
+    --color-destructive: var(--destructive);
+    --color-destructive-foreground: var(--destructive-foreground);
+    --color-border: var(--border);
+    --color-input: var(--input);
+    --color-ring: var(--ring);
+    --color-chart-1: var(--chart-1);
+    --color-chart-2: var(--chart-2);
+    --color-chart-3: var(--chart-3);
+    --color-chart-4: var(--chart-4);
+    --color-chart-5: var(--chart-5);
+    --radius-sm: calc(var(--radius) - 1px);
+    --radius-md: calc(var(--radius) - 2px);
+    --radius-lg: var(--radius);
+    --radius-xl: calc(var(--radius) + 4px);
+    /*--color-sidebar: var(--sidebar);*/
+    --color-sidebar-foreground: var(--sidebar-foreground);
+    --color-sidebar-primary: var(--sidebar-primary);
+    --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+    --color-sidebar-accent: var(--sidebar-accent);
+    --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+    --color-sidebar-border: var(--sidebar-border);
+    --color-sidebar-ring: var(--sidebar-ring);
+}
+
+:root {
+    --radius: 0.25rem;
+
+    --border-radius-extra-small: 3px;
+    --border-radius-small: 3px;
+    --border-radius-medium: 6px;
+    --border-radius-large: 12px;
+    --border-radius-circle: 50%;
+}

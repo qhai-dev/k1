@@ -1,8 +1,11 @@
-export default function Layout() {
+import { PropsWithChildren } from "react"
+
+import { AgenticLayout } from "@/layers/app/layouts"
+
+export default function Layout({ children }: PropsWithChildren) {
     return (
         <div>
-            <div>1</div>
-            <div>2</div>
+            <AgenticLayout>{children}</AgenticLayout>
         </div>
     )
 }

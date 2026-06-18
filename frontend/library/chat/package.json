@@ -8,7 +8,7 @@
     },
     "dependencies": {
         "@floating-ui/dom": "^1.7.6",
-        "@kairo/shadcn-semi": "workspace:*",
+        "@kairo/shadcn": "workspace:*",
         "@tiptap/extension-document": "^3.26.1",
         "@tiptap/extension-mention": "^3.26.1",
         "@tiptap/extension-paragraph": "^3.26.1",

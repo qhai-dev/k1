@@ -1,7 +1,7 @@
 "use client"
 
 import { computePosition, flip, shift } from "@floating-ui/dom"
-import { Button } from "@kairo/shadcn-semi"
+import { Button } from "@kairo/shadcn"
 import Document from "@tiptap/extension-document"
 import Mention from "@tiptap/extension-mention"
 import Paragraph from "@tiptap/extension-paragraph"

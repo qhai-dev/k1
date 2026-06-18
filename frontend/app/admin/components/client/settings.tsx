@@ -1,5 +1,5 @@
 "use client"
 
 export function Settings() {
-	return <div>setting component modal</div>
+    return <div>setting component modal</div>
 }

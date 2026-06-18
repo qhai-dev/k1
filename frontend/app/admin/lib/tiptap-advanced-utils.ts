@@ -1,39 +1,40 @@
 import type { Attrs, Node } from "@tiptap/pm/model"
-import { findNodePosition, isValidPosition } from "@/lib/tiptap-utils"
-import { type Editor } from "@tiptap/react"
 import { AllSelection, NodeSelection, TextSelection } from "@tiptap/pm/state"
+import { type Editor } from "@tiptap/react"
+
+import { findNodePosition, isValidPosition } from "@/lib/tiptap-utils"
 
 /**
  * Splits an array into chunks of specified size
  */
 export function chunkArray<T>(array: Array<T>, size: number): Array<Array<T>> {
-  return Array.from({ length: Math.ceil(array.length / size) }, (_, index) =>
-    array.slice(index * size, index * size + size)
-  )
+    return Array.from({ length: Math.ceil(array.length / size) }, (_, index) =>
+        array.slice(index * size, index * size + size),
+    )
 }
 
 /**
  * Helper function to check if there's content above the current position
  */
 export function hasContentAbove(editor: Editor | null): {
-  hasContent: boolean
-  content: string
+    hasContent: boolean
+    content: string
 } {
-  if (!editor) return { hasContent: false, content: "" }
+    if (!editor) return { hasContent: false, content: "" }
 
-  const { state } = editor
-  const { $from } = state.selection
+    const { state } = editor
+    const { $from } = state.selection
 
-  for (let i = $from.index(0) - 1; i >= 0; i--) {
-    const node = state.doc.child(i)
-    const content = node.textContent.trim()
+    for (let i = $from.index(0) - 1; i >= 0; i--) {
+        const node = state.doc.child(i)
+        const content = node.textContent.trim()
 
-    if (content) {
-      return { hasContent: true, content }
+        if (content) {
+            return { hasContent: true, content }
+        }
     }
-  }
 
-  return { hasContent: false, content: "" }
+    return { hasContent: false, content: "" }
 }
 
 /**
@@ -43,35 +44,32 @@ export function hasContentAbove(editor: Editor | null): {
  * @param markName - The name of the mark to look for (e.g., "highlight", "link").
  * @returns The attributes of the active mark, or `null` if the mark is not active.
  */
-export function getActiveMarkAttrs(
-  editor: Editor | null,
-  markName: string
-): Attrs | null {
-  if (!editor) return null
+export function getActiveMarkAttrs(editor: Editor | null, markName: string): Attrs | null {
+    if (!editor) return null
 
-  const { state } = editor
-  const { from, to, empty, $from } = state.selection
+    const { state } = editor
+    const { from, to, empty, $from } = state.selection
 
-  if (empty) {
-    const mark = $from.marks().find((m) => m.type.name === markName)
-    return mark?.attrs ?? null
-  }
-
-  const seen = new Set<string>()
-  let foundAttrs: Attrs | null = null
-
-  state.doc.nodesBetween(from, to, (node) => {
-    if (!node.isText) return
-
-    for (const mark of node.marks) {
-      if (mark.type.name === markName && !seen.has(mark.type.name)) {
-        seen.add(mark.type.name)
-        foundAttrs = mark.attrs
-      }
+    if (empty) {
+        const mark = $from.marks().find((m) => m.type.name === markName)
+        return mark?.attrs ?? null
     }
-  })
 
-  return foundAttrs
+    const seen = new Set<string>()
+    let foundAttrs: Attrs | null = null
+
+    state.doc.nodesBetween(from, to, (node) => {
+        if (!node.isText) return
+
+        for (const mark of node.marks) {
+            if (mark.type.name === markName && !seen.has(mark.type.name)) {
+                seen.add(mark.type.name)
+                foundAttrs = mark.attrs
+            }
+        }
+    })
+
+    return foundAttrs
 }
 
 /**
@@ -80,27 +78,27 @@ export function getActiveMarkAttrs(
  * @returns The position of the node in the selection or null if not found
  */
 export function findSelectionPosition(params: {
-  editor: Editor
-  node?: Node | null
-  nodePos?: number | null
+    editor: Editor
+    node?: Node | null
+    nodePos?: number | null
 }): number | null {
-  const { editor, node, nodePos } = params
+    const { editor, node, nodePos } = params
 
-  if (isValidPosition(nodePos)) return nodePos
+    if (isValidPosition(nodePos)) return nodePos
 
-  if (node) {
-    const found = findNodePosition({ editor, node })
-    if (found) return found.pos
-  }
+    if (node) {
+        const found = findNodePosition({ editor, node })
+        if (found) return found.pos
+    }
 
-  const { selection } = editor.state
-  if (!selection.empty) return null
+    const { selection } = editor.state
+    if (!selection.empty) return null
 
-  const resolvedPos = selection.$anchor
-  const nodeDepth = 1
-  const selectedNode = resolvedPos.node(nodeDepth)
+    const resolvedPos = selection.$anchor
+    const nodeDepth = 1
+    const selectedNode = resolvedPos.node(nodeDepth)
 
-  return selectedNode ? resolvedPos.before(nodeDepth) : null
+    return selectedNode ? resolvedPos.before(nodeDepth) : null
 }
 
 /**
@@ -109,33 +107,33 @@ export function findSelectionPosition(params: {
  * @returns The selected DOM element or null if no selection is present
  */
 export function getSelectedDOMElement(editor: Editor): HTMLElement | null {
-  const { state, view } = editor
-  const { selection } = state
+    const { state, view } = editor
+    const { selection } = state
 
-  if (selection instanceof NodeSelection) {
-    return view.nodeDOM(selection.from) as HTMLElement | null
-  }
-
-  if (selection instanceof TextSelection) {
-    const $anchor = selection.$anchor
-
-    // Ensure the depth is sufficient to avoid errors
-    if ($anchor.depth >= 1) {
-      const dom = view.nodeDOM($anchor.before(1))
-      if (dom instanceof HTMLElement) {
-        return dom
-      }
+    if (selection instanceof NodeSelection) {
+        return view.nodeDOM(selection.from) as HTMLElement | null
     }
-  }
 
-  if (selection instanceof AllSelection) {
-    const firstChild = view.dom.firstElementChild
-    if (firstChild instanceof HTMLElement) {
-      return firstChild
+    if (selection instanceof TextSelection) {
+        const $anchor = selection.$anchor
+
+        // Ensure the depth is sufficient to avoid errors
+        if ($anchor.depth >= 1) {
+            const dom = view.nodeDOM($anchor.before(1))
+            if (dom instanceof HTMLElement) {
+                return dom
+            }
+        }
     }
-  }
 
-  return null
+    if (selection instanceof AllSelection) {
+        const firstChild = view.dom.firstElementChild
+        if (firstChild instanceof HTMLElement) {
+            return firstChild
+        }
+    }
+
+    return null
 }
 
 /**
@@ -145,35 +143,35 @@ export function getSelectedDOMElement(editor: Editor): HTMLElement | null {
  * @returns An object containing the closest matching node, its position, and depth, or null if not found
  */
 export function getClosestNode(
-  editor: Editor | null,
-  options?: {
-    nodeName?: string
-    isBlock?: boolean
-    predicate?: (node: Node) => boolean
-  }
+    editor: Editor | null,
+    options?: {
+        nodeName?: string
+        isBlock?: boolean
+        predicate?: (node: Node) => boolean
+    },
 ) {
-  if (!editor) return null
+    if (!editor) return null
 
-  const { selection } = editor.state
-  const { $from } = selection
-  const { nodeName, isBlock = true, predicate } = options || {} // Default to block nodes
+    const { selection } = editor.state
+    const { $from } = selection
+    const { nodeName, isBlock = true, predicate } = options || {} // Default to block nodes
 
-  let depth = $from.depth
-  while (depth > 0) {
-    const node = $from.node(depth)
+    let depth = $from.depth
+    while (depth > 0) {
+        const node = $from.node(depth)
 
-    // Check all conditions
-    const matchesName = !nodeName || node.type.name === nodeName
-    const matchesBlock = node.type.isBlock === isBlock
-    const matchesPredicate = !predicate || predicate(node)
+        // Check all conditions
+        const matchesName = !nodeName || node.type.name === nodeName
+        const matchesBlock = node.type.isBlock === isBlock
+        const matchesPredicate = !predicate || predicate(node)
 
-    if (matchesName && matchesBlock && matchesPredicate) {
-      const pos = $from.before(depth)
-      return { node, pos, depth }
+        if (matchesName && matchesBlock && matchesPredicate) {
+            const pos = $from.before(depth)
+            return { node, pos, depth }
+        }
+        depth--
     }
-    depth--
-  }
-  return null
+    return null
 }
 
 /**
@@ -184,110 +182,110 @@ export function getClosestNode(
  * @returns An object containing the closest matching node, its position, and depth, or null if not found
  */
 export function getClosestNodeByPos(
-  editor: Editor | null,
-  pos: number,
-  options?: {
-    nodeName?: string
-    isBlock?: boolean
-    predicate?: (node: Node) => boolean
-  }
+    editor: Editor | null,
+    pos: number,
+    options?: {
+        nodeName?: string
+        isBlock?: boolean
+        predicate?: (node: Node) => boolean
+    },
 ) {
-  if (!editor) return null
+    if (!editor) return null
 
-  const docSize = editor.state.doc.content.size
-  if (pos < 0 || pos > docSize) {
-    console.warn(`Position ${pos} is out of bounds (doc size: ${docSize})`)
-    return null
-  }
-
-  try {
-    const $pos = editor.state.doc.resolve(pos)
-    const { nodeName, isBlock = true, predicate } = options || {}
-
-    let depth = $pos.depth
-    while (depth > 0) {
-      const node = $pos.node(depth)
-
-      const matchesName = !nodeName || node.type.name === nodeName
-      const matchesBlock = node.type.isBlock === isBlock
-      const matchesPredicate = !predicate || predicate(node)
-
-      if (matchesName && matchesBlock && matchesPredicate) {
-        const nodePos = $pos.before(depth)
-        return { node, pos: nodePos, depth }
-      }
-      depth--
+    const docSize = editor.state.doc.content.size
+    if (pos < 0 || pos > docSize) {
+        console.warn(`Position ${pos} is out of bounds (doc size: ${docSize})`)
+        return null
     }
-    return null
-  } catch (error) {
-    console.error("Error resolving position:", error)
-    return null
-  }
+
+    try {
+        const $pos = editor.state.doc.resolve(pos)
+        const { nodeName, isBlock = true, predicate } = options || {}
+
+        let depth = $pos.depth
+        while (depth > 0) {
+            const node = $pos.node(depth)
+
+            const matchesName = !nodeName || node.type.name === nodeName
+            const matchesBlock = node.type.isBlock === isBlock
+            const matchesPredicate = !predicate || predicate(node)
+
+            if (matchesName && matchesBlock && matchesPredicate) {
+                const nodePos = $pos.before(depth)
+                return { node, pos: nodePos, depth }
+            }
+            depth--
+        }
+        return null
+    } catch (error) {
+        console.error("Error resolving position:", error)
+        return null
+    }
 }
 
 /**
  * Convenience function to find closest block node (maintains backward compatibility)
  */
 export function getClosestBlockNode(editor: Editor | null) {
-  return getClosestNode(editor, { isBlock: true })
+    return getClosestNode(editor, { isBlock: true })
 }
 
 /**
  * Convenience function to find closest node by name
  */
 export function getClosestNodeByName(editor: Editor | null, nodeName: string) {
-  return getClosestNode(editor, { nodeName })
+    return getClosestNode(editor, { nodeName })
 }
 
 /**
  * Find multiple matching nodes up the tree
  */
 export function getAllMatchingNodes(
-  editor: Editor | null,
-  options?: {
-    nodeName?: string
-    isBlock?: boolean
-    predicate?: (node: Node) => boolean
-  }
+    editor: Editor | null,
+    options?: {
+        nodeName?: string
+        isBlock?: boolean
+        predicate?: (node: Node) => boolean
+    },
 ) {
-  if (!editor) return []
+    if (!editor) return []
 
-  const { selection } = editor.state
-  const { nodeName, isBlock = true, predicate } = options || {}
-  const matches = []
+    const { selection } = editor.state
+    const { nodeName, isBlock = true, predicate } = options || {}
+    const matches = []
 
-  const nodeMatches = (node: Node) => {
-    const matchesName = !nodeName || node.type.name === nodeName
-    const matchesBlock = node.type.isBlock === isBlock
-    const matchesPredicate = !predicate || predicate(node)
-    return matchesName && matchesBlock && matchesPredicate
-  }
-
-  if (selection instanceof NodeSelection) {
-    const selectedNode = selection.node
-    if (nodeMatches(selectedNode)) {
-      matches.push({
-        node: selectedNode,
-        pos: selection.from,
-        depth: 0,
-      })
+    const nodeMatches = (node: Node) => {
+        const matchesName = !nodeName || node.type.name === nodeName
+        const matchesBlock = node.type.isBlock === isBlock
+        const matchesPredicate = !predicate || predicate(node)
+        return matchesName && matchesBlock && matchesPredicate
     }
-  }
 
-  const { $from } = selection
-  let depth = $from.depth
-
-  while (depth > 0) {
-    const node = $from.node(depth)
-
-    if (nodeMatches(node)) {
-      const pos = $from.before(depth)
-      matches.push({ node, pos, depth })
+    if (selection instanceof NodeSelection) {
+        const selectedNode = selection.node
+        if (nodeMatches(selectedNode)) {
+            matches.push({
+                node: selectedNode,
+                pos: selection.from,
+                depth: 0,
+            })
+        }
     }
-    depth--
-  }
 
-  return matches
+    const { $from } = selection
+    let depth = $from.depth
+
+    while (depth > 0) {
+        const node = $from.node(depth)
+
+        if (nodeMatches(node)) {
+            const pos = $from.before(depth)
+            matches.push({ node, pos, depth })
+        }
+        depth--
+    }
+
+    return matches
 }
 
 /**
@@ -297,31 +295,31 @@ export function getAllMatchingNodes(
  * @returns An object containing the anchor node and its position, or null if not found
  */
 export function getAnchorNodeAndPos(
-  editor: Editor | null,
-  allowEmptySelection: boolean = true
+    editor: Editor | null,
+    allowEmptySelection: boolean = true,
 ): { node: Node; pos: number } | null {
-  if (!editor) return null
+    if (!editor) return null
 
-  const { state } = editor
-  const { selection } = state
+    const { state } = editor
+    const { selection } = state
 
-  if (selection instanceof NodeSelection) {
-    const node = selection.node
-    const pos = selection.from
+    if (selection instanceof NodeSelection) {
+        const node = selection.node
+        const pos = selection.from
 
-    if (node && isValidPosition(pos)) {
-      return { node, pos }
+        if (node && isValidPosition(pos)) {
+            return { node, pos }
+        }
     }
-  }
 
-  if (selection.empty && !allowEmptySelection) return null
+    if (selection.empty && !allowEmptySelection) return null
 
-  const $anchor = selection.$anchor
-  const depth = 1 // explicitly use depth 1
-  const node = $anchor.node(depth)
-  const pos = $anchor.before(depth)
+    const $anchor = selection.$anchor
+    const depth = 1 // explicitly use depth 1
+    const node = $anchor.node(depth)
+    const pos = $anchor.before(depth)
 
-  return { node, pos }
+    return { node, pos }
 }
 
 /**
@@ -331,15 +329,15 @@ export function getAnchorNodeAndPos(
  * @returns `true` if the selection contains text, `false` otherwise.
  */
 export function selectionHasText(editor: Editor | null): boolean {
-  if (!editor) return false
+    if (!editor) return false
 
-  const { state } = editor
-  const { selection, doc } = state
+    const { state } = editor
+    const { selection, doc } = state
 
-  if (selection.empty) return false
+    if (selection.empty) return false
 
-  const text = doc.textBetween(selection.from, selection.to, "\n", "\0")
-  return text.trim().length > 0
+    const text = doc.textBetween(selection.from, selection.to, "\n", "\0")
+    return text.trim().length > 0
 }
 
 /**
@@ -348,22 +346,17 @@ export function selectionHasText(editor: Editor | null): boolean {
  * @param extensionName - The name of the extension to retrieve
  * @returns The extension instance if found, otherwise null
  */
-export function getEditorExtension(
-  editor: Editor | null,
-  extensionName: string
-) {
-  if (!editor) return null
+export function getEditorExtension(editor: Editor | null, extensionName: string) {
+    if (!editor) return null
 
-  const extension = editor.extensionManager.extensions.find(
-    (ext) => ext.name === extensionName
-  )
+    const extension = editor.extensionManager.extensions.find((ext) => ext.name === extensionName)
 
-  if (!extension) {
-    console.warn(
-      `Extension "${extensionName}" not found in the editor schema. Ensure it is included in the editor configuration.`
-    )
-    return null
-  }
+    if (!extension) {
+        console.warn(
+            `Extension "${extensionName}" not found in the editor schema. Ensure it is included in the editor configuration.`,
+        )
+        return null
+    }
 
-  return extension
+    return extension
 }

@@ -1,6 +1,6 @@
 "use client"
 
-import { Button } from "@kairo/shadcn-semi"
+import { Button } from "@kairo/shadcn"
 import { Folder, Settings2, Ellipsis, Users, Bot } from "lucide-react"
 
 export function Header() {

@@ -23,9 +23,9 @@ importers:
       '@kairo/chat':
         specifier: workspace:*
         version: link:../../library/chat
-      '@kairo/shadcn-semi':
+      '@kairo/shadcn':
         specifier: workspace:*
-        version: link:../../library/shadcn-semi
+        version: link:../../library/shadcn
       '@tanstack/react-query':
         specifier: ^5.101.0
         version: 5.101.0(react@19.2.7)
@@ -341,9 +341,9 @@ importers:
       '@floating-ui/dom':
         specifier: ^1.7.6
         version: 1.7.6
-      '@kairo/shadcn-semi':
+      '@kairo/shadcn':
         specifier: workspace:*
-        version: link:../shadcn-semi
+        version: link:../shadcn
       '@tiptap/extension-document':
         specifier: ^3.26.1
         version: 3.26.1(@tiptap/core@3.27.0(@tiptap/pm@3.26.1))
@@ -403,7 +403,7 @@ importers:
         specifier: ^5.9.3
         version: 5.9.3
 
-  frontend/library/shadcn-semi:
+  frontend/library/shadcn:
     dependencies:
       '@base-ui/react':
         specifier: ^1.4.1
@@ -444,7 +444,7 @@ importers:
         version: 4.3.0
       '@tailwindcss/postcss':
         specifier: ^4.2.1
-        version: 4.3.0
+        version: 4.3.1
       '@types/react':
         specifier: 19.2.6
         version: 19.2.6
@@ -456,7 +456,7 @@ importers:
         version: 8.5.15
       tailwindcss:
         specifier: ^4.2.1
-        version: 4.3.0
+        version: 4.3.1
       typescript:
         specifier: ^5.9.3
         version: 5.9.3
@@ -11883,7 +11883,7 @@ snapshots:
       '@babel/plugin-transform-async-generator-functions': 7.29.7(@babel/core@7.29.7)
       '@babel/plugin-transform-async-to-generator': 7.29.7(@babel/core@7.29.7)
       '@babel/plugin-transform-block-scoping': 7.29.7(@babel/core@7.29.7)
-      '@babel/plugin-transform-class-properties': 7.29.7(@babel/core@7.29.7)
+      '@babel/plugin-transform-class-properties': 7.25.9(@babel/core@7.29.7)
       '@babel/plugin-transform-classes': 7.29.7(@babel/core@7.29.7)
       '@babel/plugin-transform-destructuring': 7.29.7(@babel/core@7.29.7)
       '@babel/plugin-transform-flow-strip-types': 7.29.7(@babel/core@7.29.7)

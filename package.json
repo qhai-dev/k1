@@ -1,6 +1,9 @@
 {
     "name": "kairo",
     "private": true,
+    "scripts": {
+        "fmt": "pnpm oxfmt"
+    },
     "devDependencies": {
         "oxfmt": "^0.48.0",
         "oxlint": "^1.66.0"

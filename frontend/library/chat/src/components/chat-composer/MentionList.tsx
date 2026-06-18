@@ -11,7 +11,7 @@ import {
     DropdownMenuSubContent,
     DropdownMenuSubTrigger,
     DropdownMenuTrigger,
-} from "@kairo/shadcn-semi"
+} from "@kairo/shadcn"
 import type { SuggestionProps } from "@tiptap/suggestion"
 import { useEffect, useImperativeHandle, useState, forwardRef } from "react"
 export interface MentionListRef {

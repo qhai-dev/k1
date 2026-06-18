@@ -1,5 +1,3 @@
-import { Agentic } from "@/internal/pages/agentic"
-
 export default function Page() {
-    return <Agentic />
+    return <div>agentic page</div>
 }

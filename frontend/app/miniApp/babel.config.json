@@ -1,13 +1,13 @@
 {
-	"presets": [
-		[
-			"taro",
-			{
-				"framework": "react",
-				"ts": true,
-				"compiler": "webpack5",
-				"useBuiltIns": false
-			}
-		]
-	]
+    "presets": [
+        [
+            "taro",
+            {
+                "framework": "react",
+                "ts": true,
+                "compiler": "webpack5",
+                "useBuiltIns": false
+            }
+        ]
+    ]
 }

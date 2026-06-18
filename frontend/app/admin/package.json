@@ -9,7 +9,7 @@
     "dependencies": {
         "@floating-ui/react": "^0.27.19",
         "@kairo/chat": "workspace:*",
-        "@kairo/shadcn-semi": "workspace:*",
+        "@kairo/shadcn": "workspace:*",
         "@tanstack/react-query": "^5.101.0",
         "class-variance-authority": "^0.7.1",
         "clsx": "^2.1.1",

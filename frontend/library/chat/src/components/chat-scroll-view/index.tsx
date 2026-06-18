@@ -1,5 +1,5 @@
 "use client"
-import { ScrollArea } from "@kairo/shadcn-semi"
+import { ScrollArea } from "@kairo/shadcn"
 import * as React from "react"
 
 import { ChatMessage } from "../chat-message"
