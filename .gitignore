@@ -8,24 +8,18 @@
 
 # next.js
 /out/
+next-env.d.ts
 
 # production
 
 # debug
 npm-debug.log*
 
-# env files (can opt-in for committing if needed)
-.env*
-
 
 # typescript
 *.tsbuildinfo
-next-env.d.ts
 
 
-# OSX
-#
-.DS_Store
 
 # Xcode
 #
@@ -46,23 +40,7 @@ DerivedData
 *.xcuserstate
 **/.xcode.env.local
 
-# Android/IntelliJ
-#
-.idea
-.gradle
-local.properties
-*.iml
-*.hprof
-.cxx/
-*.keystore
-!debug.keystore
-.kotlin/
 
-# node.js
-#
-node_modules/
-npm-debug.log
-yarn-error.log
 
 # fastlane
 #
@@ -87,11 +65,8 @@ yarn-error.log
 /coverage
 
 dist/
-deploy_versions/
 .temp/
 .rn_temp/
-node_modules/
-.DS_Store
 .swc
 *.local
 
@@ -99,8 +74,6 @@ node_modules/
 
 # Learn more https://docs.github.com/en/get-started/getting-started-with-git/ignoring-files
 
-# dependencies
-node_modules/
 
 # Expo
 .expo/
@@ -108,35 +81,8 @@ dist/
 web-build/
 expo-env.d.ts
 
-# Native
-.kotlin/
-*.orig.*
-*.jks
-*.p8
-*.p12
-*.key
-*.mobileprovision
-
-# Metro
-.metro-health-check*
-
-# debug
-npm-debug.*
-yarn-debug.*
-yarn-error.*
-
 # macOS
 .DS_Store
-*.pem
 
 # local env files
 .env*.local
-
-# typescript
-*.tsbuildinfo
-
-example
-
-# generated native folders
-/ios
-/android
