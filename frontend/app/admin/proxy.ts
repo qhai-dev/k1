@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server"
 
-export function proxy() {
+export async function proxy() {
     return NextResponse.next()
 }
 

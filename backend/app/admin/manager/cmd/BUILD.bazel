@@ -5,7 +5,6 @@ go_library(
     srcs = ["main.go"],
     importpath = "github.com/qhai-dev/kairo/backend/app/admin/manager/cmd",
     visibility = ["//visibility:private"],
-    deps = ["//backend/library/framework"],
 )
 
 go_binary(

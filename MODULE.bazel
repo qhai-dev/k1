@@ -19,9 +19,6 @@ go_sdk = use_extension(
 go_sdk.download(
     version = "1.26.1",
 )
-use_repo(
-    go_sdk,
-)
 
 go_deps = use_extension(
     "@gazelle//:extensions.bzl",
@@ -32,4 +29,12 @@ go_deps.from_file(
 )
 use_repo(
     go_deps,
+    "com_github_go_logr_logr",
+    "com_github_go_logr_zapr",
+    "com_github_google_wire",
+    "com_github_spf13_viper",
+    "com_github_spf13_viper_remote",
+    "io_etcd_go_etcd_client_v3",
+    "org_golang_google_grpc",
+    "org_uber_go_zap",
 )

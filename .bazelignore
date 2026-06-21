@@ -4,6 +4,3 @@
 deploy
 frontend
 scripts
-
-# Zed IDE config directory
-.zed

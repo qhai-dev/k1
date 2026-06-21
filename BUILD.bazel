@@ -2,10 +2,7 @@ load("@gazelle//:def.bzl", "gazelle")
 
 # Gazelle generates and updates BUILD files for Go packages.
 # Docs: https://github.com/bazel-contrib/bazel-gazelle
-#
-# gazelle:exclude marks directories that should be skipped during scanning.
 
-# gazelle:exclude .zed
 # gazelle:exclude deploy
 # gazelle:exclude frontend
 # gazelle:exclude scripts

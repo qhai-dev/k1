@@ -1,9 +1,7 @@
 package main
 
-import "github.com/qhai-dev/kairo/backend/library/framework"
+import "fmt"
 
 func main() {
-	app := framework.New()
-
-	app.Run()
+	fmt.Printf("hello bazel build remote test")
 }
