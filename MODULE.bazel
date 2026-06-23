@@ -45,30 +45,37 @@ bazel_dep(
 )
 
 bazel_dep(
+    name = "rules_gitops",
+    version = "1.0.0-rc.2",
+)
+
+kustomize = use_extension(
+    "@rules_gitops//kustomize:defs.bzl",
+    "kustomize",
+)
+kustomize.toolchain(
+    version = "5.7.1",
+)
+
+kubectl = use_extension(
+    "@rules_gitops//kubectl:defs.bzl",
+    "kubectl",
+)
+kubectl.toolchain(
+    version = "1.32.2",
+)
+
+bazel_dep(
     name = "rules_img",
     version = "0.3.13",
 )
 
 pull = use_repo_rule("@rules_img//img:pull.bzl", "pull")
+
 pull(
     name = "ubuntu",
     digest = "sha256:1e622c5f073b4f6bfad6632f2616c7f59ef256e96fe78bf6a595d1dc4376ac02",
     registry = "index.docker.io",
     repository = "library/ubuntu",
     tag = "24.04",
-)
-
-bazel_dep(
-    name = "rules_gitops",
-    version = "1.0.0-rc.2",
-)
-
-kustomize = use_extension("@rules_gitops//kustomize:defs.bzl", "kustomize")
-kustomize.toolchain(
-    version = "5.7.1",
-)
-
-kubectl = use_extension("@rules_gitops//kubectl:defs.bzl", "kubectl")
-kubectl.toolchain(
-    version = "1.32.2",
 )
