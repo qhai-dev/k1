@@ -1,0 +1,8 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kairo-deployment
+  labels:
+    app: kairo-app
+spec:
+  replicas: 1
