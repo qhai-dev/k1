@@ -69,12 +69,12 @@ bazel_dep(
     version = "0.3.13",
 )
 
-images = use_extension("@rules_img//img:extensions.bzl", "images")
-images.pull(
+pull = use_repo_rule("@rules_img//img:pull.bzl", "pull")
+
+pull(
     name = "distroless",
-    digest = "sha256:3592aa8171c77482f62bbc4164e6a2d141c6122554ace66e5cc910cadb961ff0",
+    digest = "sha256:838610585824d0141daf5d76af5778f59a6f9dcc1a822148c790c9043c89e8eb",
     registry = "gcr.io",
     repository = "distroless/static-debian13",
     tag = "latest-amd64",
 )
-use_repo(images)
