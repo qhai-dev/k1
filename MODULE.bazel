@@ -118,4 +118,4 @@ typescript.deps(
     name: "typescript",
     ts_version_from = "//:package.json",
 )
-use_repo(typescript)
+use_repo(typescript,"typescript")
