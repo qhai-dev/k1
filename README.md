@@ -30,3 +30,8 @@ build:remote --remote_max_connections=50
 build:remote --remote_local_fallback
 build:remote-write --config=remote
 build:remote-write --remote_upload_local_results=true
+
+go install 
+air
+lefthook
+sqlc
