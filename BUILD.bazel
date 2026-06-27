@@ -1,5 +1,5 @@
-load("@gazelle//:def.bzl", "gazelle")
 load("@bazel_env.bzl", "bazel_env")
+load("@gazelle//:def.bzl", "gazelle")
 load("@gazelle//:go_tools.bzl", "GO_TOOLS")
 
 # Gazelle generates and updates BUILD files for Go packages.
