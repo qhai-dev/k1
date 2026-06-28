@@ -1,15 +1,31 @@
 load("@bazel_env.bzl", "bazel_env")
-load("@gazelle//:def.bzl", "gazelle")
+load("@gazelle//:def.bzl", "gazelle", "gazelle_binary")
 load("@gazelle//:go_tools.bzl", "GO_TOOLS")
+load("@rules_buf//buf:defs.bzl", "buf_format")
 
-# Gazelle generates and updates BUILD files for Go packages.
-# Docs: https://github.com/bazel-contrib/bazel-gazelle
+exports_files(
+    ["buf.yaml"],
+    visibility = ["//visibility:public"],
+)
+
+gazelle_binary(
+    name = "gazelle-buf",
+    languages = [
+        "@gazelle//language/go",
+        "@gazelle//language/proto",
+        "@rules_buf//gazelle/buf:buf",
+    ],
+)
+
+# gazelle:go_grpc_compilers //:gen-go-grpc, @rules_go//proto:go_proto
 
 # gazelle:exclude deploy
+# gazelle:exclude docs
 # gazelle:exclude frontend
 # gazelle:exclude scripts
 gazelle(
     name = "gazelle",
+    gazelle = ":gazelle-buf",
     prefix = "github.com/qhai-dev/kairo",
 )
 
@@ -18,4 +34,8 @@ bazel_env(
     tools = {
         "go": "@rules_go//go",
     } | GO_TOOLS,
+)
+
+buf_format(
+    name = "buf_format",
 )
