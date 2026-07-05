@@ -145,9 +145,3 @@ typescript.deps(
     ts_version_from = "//:package.json",
 )
 use_repo(typescript, "typescript")
-
-bazel_dep(
-    name = "bazel_env.bzl",
-    version = "0.8.0",
-    dev_dependency = True,
-)

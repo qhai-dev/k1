@@ -1,4 +1,3 @@
-load("@bazel_env.bzl", "bazel_env")
 load("@gazelle//:def.bzl", "gazelle", "gazelle_binary")
 load("@gazelle//:go_tools.bzl", "GO_TOOLS")
 load("@npm//:defs.bzl", "npm_link_all_packages")
@@ -30,13 +29,6 @@ gazelle(
     name = "gazelle",
     gazelle = ":gazelle-buf",
     prefix = "github.com/qhai-dev/kairo",
-)
-
-bazel_env(
-    name = "bazel_env",
-    tools = {
-        "go": "@rules_go//go",
-    } | GO_TOOLS,
 )
 
 buf_format(
