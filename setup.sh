@@ -1,0 +1,1 @@
+echo "kairo setup complete"

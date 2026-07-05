@@ -23,15 +23,14 @@ build:remote --remote_local_fallback
 build:remote-write --config=remote
 build:remote-write --remote_upload_local_results=true
 
-go install 
-sqlc
-buf
-protoc-gen-go
-protoc-gen-go-grpc
-buildifier
-
-$ go install github.com/grpc-ecosystem/grpc-gateway/v2/protoc-gen-grpc-gateway@latest
-$ go install google.golang.org/protobuf/cmd/protoc-gen-go@latest
-$ go install google.golang.org/grpc/cmd/protoc-gen-go-grpc@latest
-
 Allow people to use `bazel run @rules_buf_toolchains//:buf -- --version`
+
+
+	github.com/evilmartians/lefthook/v2@v2.1.9
+	github.com/google/wire/cmd/wire
+	github.com/grpc-ecosystem/grpc-gateway/v2/protoc-gen-grpc-gateway
+	google.golang.org/grpc/cmd/protoc-gen-go-grpc
+	google.golang.org/protobuf/cmd/protoc-gen-go
+	github.com/bufbuild/buf/cmd/buf@v1.71.0
+	github.com/sqlc-dev/sqlc/cmd/sqlc@latest
+	github.com/bazelbuild/buildtools/buildifier@latest

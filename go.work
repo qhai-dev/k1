@@ -1,7 +1,6 @@
 go 1.26.4
 
 use (
-	.
 	./backend/app/admin/manager
 	./backend/app/admin/member
 	./backend/app/service/agentic
