@@ -146,6 +146,6 @@ bazel_dep(
 
 multitool = use_extension("@rules_multitool//multitool:extension.bzl", "multitool")
 multitool.hub(
-    lockfile = "//:multitool.lock.json",
+    lockfile = "//:multitool.bazel.lock",
 )
 use_repo(multitool, "multitool")
