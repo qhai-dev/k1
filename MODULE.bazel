@@ -39,26 +39,6 @@ bazel_dep(
     version = "35.1",
 )
 bazel_dep(
-    name = "rules_buf",
-    version = "0.5.4",
-)
-bazel_dep(
-    name = "googleapis",
-    version = "0.0.0-20260623-b6f9ff05",
-)
-bazel_dep(
-    name = "grpc_ecosystem_grpc_gateway",
-    version = "2.29.0",
-)
-
-# buf = use_extension("@rules_buf//buf:extensions.bzl", "buf")
-# buf.toolchains(
-#    sha256 = "9fa69dd51837106d688687dbe5ab63cbef41cb09ff362284c3e90dcedb126dab",
-#    version = "v1.71.0",
-# )
-# use_repo(buf, "buf_toolchains")
-
-bazel_dep(
     name = "rules_shell",
     version = "0.8.0",
 )
@@ -113,9 +93,10 @@ bazel_dep(
 
 node = use_extension("@rules_nodejs//nodejs:extensions.bzl", "node")
 node.toolchain(
+    name = "node",
     node_version = "24.18.0",
 )
-use_repo(node, "nodejs_toolchains")
+use_repo(node, "node")
 
 npm = use_extension("@aspect_rules_js//npm:extensions.bzl", "npm")
 npm.npm_translate_lock(
@@ -138,14 +119,3 @@ typescript.deps(
     ts_version_from = "//:package.json",
 )
 use_repo(typescript, "typescript")
-
-bazel_dep(
-    name = "rules_multitool",
-    version = "1.11.1",
-)
-
-multitool = use_extension("@rules_multitool//multitool:extension.bzl", "multitool")
-multitool.hub(
-    lockfile = "//tools:multitool.lock.json",
-)
-use_repo(multitool, "multitool")

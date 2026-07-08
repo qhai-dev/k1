@@ -1,5 +1,4 @@
 load("@protobuf//bazel:proto_library.bzl", "proto_library")
-load("@rules_buf//buf:defs.bzl", "buf_lint_test")
 load("@rules_go//go:def.bzl", "go_library")
 
 proto_library(
@@ -7,13 +6,6 @@ proto_library(
     srcs = ["test2.proto"],
     strip_import_prefix = "/backend/kapis",
     visibility = ["//visibility:public"],
-)
-
-buf_lint_test(
-    name = "v1_proto_lint",
-    config = "//:buf.yaml",
-    module = "backend/kapis",
-    targets = [":v1_proto"],
 )
 
 go_library(

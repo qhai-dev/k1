@@ -1,21 +1,8 @@
 load("@gazelle//:def.bzl", "gazelle", "gazelle_binary")
 load("@npm//:defs.bzl", "npm_link_all_packages")
-load("@rules_buf//buf:defs.bzl", "buf_format")
 
-npm_link_all_packages(name = "node_modules")
-
-exports_files(
-    ["buf.yaml"],
-    visibility = ["//visibility:public"],
-)
-
-gazelle_binary(
-    name = "gazelle-buf",
-    languages = [
-        "@gazelle//language/go",
-        "@gazelle//language/proto",
-        "@rules_buf//gazelle/buf:buf",
-    ],
+npm_link_all_packages(
+    name = "node_modules",
 )
 
 # gazelle:prefix github.com/qhai-dev/kairo
@@ -27,10 +14,4 @@ gazelle_binary(
 # gazelle:exclude scripts
 gazelle(
     name = "gazelle",
-    gazelle = ":gazelle-buf",
-    prefix = "github.com/qhai-dev/kairo",
-)
-
-buf_format(
-    name = "buf_format",
 )
