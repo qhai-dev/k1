@@ -1,1 +1,1 @@
-# kairos
+# AGENTS.md
