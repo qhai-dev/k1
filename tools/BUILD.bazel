@@ -9,7 +9,6 @@ exports_files(
 bazel_env(
     name = "bazel_env",
     toolchains = {
-        "go": "@rules_go//go:toolchain",
         "nodejs": "@nodejs_toolchains//:resolved_toolchain",
     },
     tools = {

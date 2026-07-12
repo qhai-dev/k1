@@ -1,6 +1,5 @@
 # For details on lefthook.yaml configuration, visit https://lefthook.dev/configuration/
 pre-push:
-  parallel: true
   jobs:
     - name: lint backend
       run: echo "hello backend"
