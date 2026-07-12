@@ -7,6 +7,7 @@ npm_link_all_packages(
 
 # gazelle:prefix github.com/qhai-dev/kairo
 
+# gazelle:exclude .config
 # gazelle:exclude .devcontainer
 # gazelle:exclude deploy
 # gazelle:exclude docs
