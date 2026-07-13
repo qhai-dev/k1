@@ -1,6 +1,5 @@
 * text=auto eol=lf
 
-*.pb.go linguist-generated
-*.pb.gw.go linguist-generated
-
+**/*.pb.go linguist-generated
+**/*.pb.gw.go linguist-generated
 **/wire_gen.go linguist-generated
