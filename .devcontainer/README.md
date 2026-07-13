@@ -1,1 +1,0 @@
-# kubectl, minikube, kustomize‌, bazelisk

@@ -1,13 +1,14 @@
 {
+    "name": "Kins Development Environment",
     "build": {
         "dockerfile": "Dockerfile"
     },
+    "postCreateCommand": "./.devcontainer/post_create.sh",
     "features": {
         "ghcr.io/devcontainers/features/kubectl-helm-minikube:1": {},
         "ghcr.io/devcontainers/features/docker-in-docker:4": {},
-        "ghcr.io/devcontainers/features/go:1": {
-            "version": "1.26.4"
-        }
-    },
-    "postCreateCommand": "bash /tmp/install.sh"
+        "ghcr.io/devcontainers/features/git:1": {},
+        "ghcr.io/devcontainers-community/features/bazel:1": {},
+        "ghcr.io/devcontainers-community/features/direnv:1":{}
+    }
 }
