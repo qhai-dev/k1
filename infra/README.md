@@ -1,1 +1,1 @@
-# infrastructure as code in Terraform
+# infrastructure as code
