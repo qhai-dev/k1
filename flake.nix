@@ -1,15 +1,44 @@
 {
-  description = "A very basic flake";
+  description = "Development Nix flake for K1";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
   };
 
-  outputs = { self, nixpkgs }: {
+  outputs =
+    { nixpkgs, ... }:
+    let
+      systems = [
+        "x86_64-linux"
+        "aarch64-linux"
+        "x86_64-darwin"
+        "aarch64-darwin"
+      ];
 
-    packages.x86_64-linux.hello = nixpkgs.legacyPackages.x86_64-linux.hello;
-
-    packages.x86_64-linux.default = self.packages.x86_64-linux.hello;
-
-  };
+      forAllSystems = f: nixpkgs.lib.genAttrs systems f;
+    in
+    {
+      devShells = forAllSystems (
+        system:
+        let
+          pkgs = import nixpkgs {
+            inherit system;
+          };
+        in
+        {
+          default = pkgs.mkShell {
+            packages = with pkgs; [
+              go
+              nodejs
+              sqlc
+              lefthook
+              buf
+              wire
+              nixd
+              nixfmt
+            ];
+          };
+        }
+      );
+    };
 }

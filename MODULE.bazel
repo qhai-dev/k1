@@ -74,22 +74,13 @@ npm_typescript.deps(
 )
 use_repo(npm_typescript, "npm_typescript")
 
-bazel_dep(
-    name = "bazel_env.bzl",
-    version = "0.8.0",
-)
-bazel_dep(name = "rules_multitool", version = "1.11.1")
-
-multitool = use_extension("@rules_multitool//multitool:extension.bzl", "multitool")
-multitool.hub(
-    lockfile = "//tools:tools.json",
-)
-use_repo(multitool, "multitool")
-
 bazel_dep(name = "rules_tf", version = "0.0.10")
 
 tf = use_extension("@rules_tf//tf:extensions.bzl", "tf_repositories", dev_dependency = True)
 tf.download(
     version = "1.24.1",
+    mirror = {
+
+    }
 )
 use_repo(tf, "tf_toolchains")
