@@ -89,3 +89,6 @@ expo-env.d.ts
 
 # bazel symlinks
 bazel-*
+
+# direnv symlinks
+.direnv/
