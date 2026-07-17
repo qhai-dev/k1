@@ -15,6 +15,8 @@
         "aarch64-darwin"
       ];
 
+      lib = nixpkgs.lib;
+
       forAllSystems = nixpkgs.lib.genAttrs systems;
     in
     {
@@ -23,6 +25,14 @@
         let
           pkgs = import nixpkgs {
             inherit system;
+
+            config = {
+              allowUnfreePredicate =
+                pkg:
+                builtins.elem (lib.getName pkg) [
+                  "terraform"
+                ];
+            };
           };
         in
         {
@@ -30,11 +40,15 @@
             packages = with pkgs; [
               go
               gopls
+              gotools
               nodejs
               sqlc
               lefthook
               buf
               wire
+              bazelisk
+              terraform
+              shellcheck
               nixd
               nixfmt
             ];
