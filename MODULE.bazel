@@ -31,7 +31,7 @@ kustomize.toolchain(version = "5.8.0")
 kubectl = use_extension("@rules_gitops//kubectl:defs.bzl", "kubectl")
 kubectl.toolchain(version = "1.35.0")
 
-bazel_dep(name = "rules_img", version = "0.3.13")
+bazel_dep(name = "rules_img", version = "0.3.17")
 
 pull = use_repo_rule("@rules_img//img:pull.bzl", "pull")
 
@@ -66,21 +66,22 @@ pnpm.pnpm(
 )
 use_repo(pnpm, "pnpm")
 
-bazel_dep(name = "aspect_rules_ts", version = "3.8.11")
+bazel_dep(name = "aspect_rules_ts", version = "3.9.2")
 
-npm_typescript = use_extension("@aspect_rules_ts//ts:extensions.bzl", "ext")
-npm_typescript.deps(
+typescript = use_extension("@aspect_rules_ts//ts:extensions.bzl", "ext", dev_dependency = True)
+typescript.deps(
     ts_version_from = "//:package.json",
 )
-use_repo(npm_typescript, "npm_typescript")
+use_repo(typescript, "npm_typescript")
 
 bazel_dep(name = "rules_tf", version = "0.0.10")
 
 tf = use_extension("@rules_tf//tf:extensions.bzl", "tf_repositories", dev_dependency = True)
 tf.download(
-    version = "1.24.1",
     mirror = {
-
-    }
+    },
+    version = "1.24.1",
 )
 use_repo(tf, "tf_toolchains")
+
+bazel_dep(name = "rules_multitool", version = "1.11.1")
