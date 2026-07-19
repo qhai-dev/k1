@@ -1,0 +1,203 @@
+{
+  "$schema": "https://raw.githubusercontent.com/theoremlp/rules_multitool/main/lockfile.schema.json",
+  "buf": {
+    "binaries": [
+      {
+        "kind": "file",
+        "url": "https://github.com/bufbuild/buf/releases/download/v1.72.0/buf-Linux-aarch64",
+        "sha256": "bdbb275fb9624104ef4d8513d269cc410a153138646e67136cb3f8cc185be289",
+        "os": "linux",
+        "cpu": "arm64"
+      },
+      {
+        "kind": "file",
+        "url": "https://github.com/bufbuild/buf/releases/download/v1.72.0/buf-Linux-x86_64",
+        "sha256": "8720830e26a733da55bb89bcd3cb44849c0965fc0c44fb5d691cccdc64dca5af",
+        "os": "linux",
+        "cpu": "x86_64"
+      },
+      {
+        "kind": "file",
+        "url": "https://github.com/bufbuild/buf/releases/download/v1.72.0/buf-Darwin-arm64",
+        "sha256": "5176f23a6118b9978de1340c3e3301a4ed0d48e16a669510be44b4c355170d57",
+        "os": "macos",
+        "cpu": "arm64"
+      },
+      {
+        "kind": "file",
+        "url": "https://github.com/bufbuild/buf/releases/download/v1.72.0/buf-Darwin-x86_64",
+        "sha256": "eb815a2708d4a43d31799049d5a2987ea81d0a9e98b53976d47bd1e78d154a8f",
+        "os": "macos",
+        "cpu": "x86_64"
+      }
+    ]
+  },
+  "lefthook": {
+    "binaries": [
+      {
+        "kind": "file",
+        "url": "https://github.com/evilmartians/lefthook/releases/download/v2.1.10/lefthook_2.1.10_Linux_arm64",
+        "sha256": "9e4e2eac3f72eb6757eb01ff147622dd16a4805d3a5c2c7a701982df79eb1bd5",
+        "os": "linux",
+        "cpu": "arm64"
+      },
+      {
+        "kind": "file",
+        "url": "https://github.com/evilmartians/lefthook/releases/download/v2.1.10/lefthook_2.1.10_Linux_x86_64",
+        "sha256": "f1de34ea0572363a525a2000d40f5a646733893ad28c924b34ac98304518073f",
+        "os": "linux",
+        "cpu": "x86_64"
+      },
+      {
+        "kind": "file",
+        "url": "https://github.com/evilmartians/lefthook/releases/download/v2.1.10/lefthook_2.1.10_MacOS_arm64",
+        "sha256": "d00711fcd2613d232a9bdc24a5e6704367ce505db27a88e670dd73bc40bb1fd9",
+        "os": "macos",
+        "cpu": "arm64"
+      },
+      {
+        "kind": "file",
+        "url": "https://github.com/evilmartians/lefthook/releases/download/v2.1.10/lefthook_2.1.10_MacOS_x86_64",
+        "sha256": "42186b65e2b8918aa1c1c8c2b17235b09710b1342aa4bd949c1c44538188de9b",
+        "os": "macos",
+        "cpu": "x86_64"
+      }
+    ]
+  },
+  "sqlc": {
+    "binaries": [
+      {
+        "kind": "archive",
+        "url": "https://github.com/sqlc-dev/sqlc/releases/download/v1.31.1/sqlc_1.31.1_linux_arm64.tar.gz",
+        "sha256": "b7cae247740d0c51a1e657479e5b2d21e6fef428f596682a01bc55bf4ab8a23d",
+        "file": "sqlc",
+        "os": "linux",
+        "cpu": "arm64"
+      },
+      {
+        "kind": "archive",
+        "url": "https://github.com/sqlc-dev/sqlc/releases/download/v1.31.1/sqlc_1.31.1_linux_amd64.tar.gz",
+        "sha256": "497ae4fcdfa64c5b0c311ffe4c2bd991e43991e82e5367792ed78bc2dca27354",
+        "file": "sqlc",
+        "os": "linux",
+        "cpu": "x86_64"
+      },
+      {
+        "kind": "archive",
+        "url": "https://github.com/sqlc-dev/sqlc/releases/download/v1.31.1/sqlc_1.31.1_darwin_arm64.tar.gz",
+        "sha256": "21602158c99eb1f2bae197a66abfb1941d1e9e50b23125bb193349c6b1acc71e",
+        "file": "sqlc",
+        "os": "macos",
+        "cpu": "arm64"
+      },
+      {
+        "kind": "archive",
+        "url": "https://github.com/sqlc-dev/sqlc/releases/download/v1.31.1/sqlc_1.31.1_darwin_amd64.tar.gz",
+        "sha256": "c5af76772e3785d21663a62697056b383f07629979b1bd25b93872e73dbd519b",
+        "file": "sqlc",
+        "os": "macos",
+        "cpu": "x86_64"
+      }
+    ]
+  },
+  "wire": {
+    "binaries": [
+      {
+        "kind": "file",
+        "url": "https://github.com/qhai-dev/wire/releases/download/v0.7.0/wire_0.7.0_linux_arm64",
+        "sha256": "5a723ad4ff00ebb355c63d5e35c0219d6c9f31edd47ef8406f8b260752d26167",
+        "os": "linux",
+        "cpu": "arm64"
+      },
+      {
+        "kind": "file",
+        "url": "https://github.com/qhai-dev/wire/releases/download/v0.7.0/wire_0.7.0_linux_x86_64",
+        "sha256": "497ae4fcdfa64c5b0c311ffe4c2bd991e43991e82e5367792ed78bc2dca27354",
+        "os": "linux",
+        "cpu": "x86_64"
+      },
+      {
+        "kind": "file",
+        "url": "https://github.com/qhai-dev/wire/releases/download/v0.7.0/wire_0.7.0_macos_arm64",
+        "sha256": "d6e90285b070def43d88bdb48a56c004e752e31e13128bbcf273e25042cc0643",
+        "os": "macos",
+        "cpu": "arm64"
+      },
+      {
+        "kind": "file",
+        "url": "https://github.com/qhai-dev/wire/releases/download/v0.7.0/wire_0.7.0_macos_x86_64",
+        "sha256": "36a99d213554b5ff4863462fbac1d29f3ff257ca4cf3d87d9bba90b9b85faf68",
+        "os": "macos",
+        "cpu": "x86_64"
+      }
+    ]
+  },
+  "terraform": {
+    "binaries": [
+      {
+        "kind": "archive",
+        "url": "https://releases.hashicorp.com/terraform/1.15.8/terraform_1.15.8_linux_arm64.zip",
+        "sha256": "8891e9dcedc9e3b8950bc6af9d4d8af1f4cfade3062f53b9dc403a89f6ce8c9c",
+        "file": "terraform",
+        "os": "linux",
+        "cpu": "arm64"
+      },
+      {
+        "kind": "archive",
+        "url": "https://releases.hashicorp.com/terraform/1.15.8/terraform_1.15.8_linux_amd64.zip",
+        "sha256": "d25ce7b6902013ad905db3d2eab0be4cd905887fe88b81a6171b8d5503c31f3d",
+        "file": "terraform",
+        "os": "linux",
+        "cpu": "x86_64"
+      },
+      {
+        "kind": "archive",
+        "url": "https://releases.hashicorp.com/terraform/1.15.8/terraform_1.15.8_darwin_arm64.zip",
+        "sha256": "f210110c5698b94d803a7a63cdb0251b5455c150841478808e2bbb343f95ed68",
+         "file": "terraform",
+        "os": "macos",
+        "cpu": "arm64"
+      },
+      {
+        "kind": "archive",
+        "url": "https://releases.hashicorp.com/terraform/1.15.8/terraform_1.15.8_darwin_amd64.zip",
+        "sha256": "e2e812e783771159bf758fd4e55d6dc9bb08f63e2af2c63d212721807a02c5dc",
+        "file": "terraform",
+        "os": "macos",
+        "cpu": "x86_64"
+      }
+    ]
+  },
+  "buildifier": {
+    "binaries": [
+      {
+        "kind": "file",
+        "url": "https://github.com/bazelbuild/buildtools/releases/download/v8.5.1/buildifier-linux-arm64",
+        "sha256": "947bf6700d708026b2057b09bea09abbc3cafc15d9ecea35bb3885c4b09ccd04",
+        "os": "linux",
+        "cpu": "arm64"
+      },
+      {
+        "kind": "file",
+        "url": "https://github.com/bazelbuild/buildtools/releases/download/v8.5.1/buildifier-linux-amd64",
+        "sha256": "887377fc64d23a850f4d18a077b5db05b19913f4b99b270d193f3c7334b5a9a7",
+        "os": "linux",
+        "cpu": "x86_64"
+      },
+      {
+        "kind": "file",
+        "url": "https://github.com/bazelbuild/buildtools/releases/download/v8.5.1/buildifier-darwin-arm64",
+        "sha256": "62836a9667fa0db309b0d91e840f0a3f2813a9c8ea3e44b9cd58187c90bc88ba",
+        "os": "macos",
+        "cpu": "arm64"
+      },
+      {
+        "kind": "file",
+        "url": "https://github.com/bazelbuild/buildtools/releases/download/v8.5.1/buildifier-darwin-amd64",
+        "sha256": "31de189e1a3fe53aa9e8c8f74a0309c325274ad19793393919e1ca65163ca1a4",
+        "os": "macos",
+        "cpu": "x86_64"
+      }
+    ]
+  }
+}
