@@ -1,9 +1,1 @@
 docs
-node_modules
-frontend/app/admin/node_modules
-frontend/app/miniApp/node_modules
-frontend/app/nativeApp/node_modules
-frontend/app/webApp/node_modules
-frontend/kapis/node_modules
-frontend/library/chat/node_modules
-frontend/library/shadcn/node_modules
