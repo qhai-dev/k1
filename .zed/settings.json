@@ -85,15 +85,16 @@
         },
       },
     },
-    "Terraform": {
-          "format_on_save": "on",
-          "formatter": {
-            "external": {
-              "command": "terraform",
-              "arguments": ["fmt", "-"]
-            }
-          }
+    "Shell Script": {
+      "format_on_save": "on",
+      "formatter": {
+        "external": {
+          "command": "shfmt",
+          "arguments": ["--filename", "{buffer_path}", "--indent", "4"]
         }
+      }
+    },
+
   },
   "file_scan_exclusions": [
     "**/.git",
@@ -106,14 +107,5 @@
     "**/.classpath",
     "**/.settings",
     "**/bazel-*",
-  ],
-    "lsp": {
-      "terraform-ls": {
-        "initialization_options": {
-          "experimentalFeatures": {
-            "prefillRequiredFields": true
-          }
-        }
-      }
-    }
+  ]
 }
