@@ -48,7 +48,7 @@ node.toolchain(
     name = "node",
     node_version = "24.18.0",
 )
-use_repo(node, "node", "nodejs_toolchains")
+use_repo(node, "node")
 
 bazel_dep(name = "aspect_rules_js", version = "3.2.2")
 
