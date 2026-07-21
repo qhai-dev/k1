@@ -132,37 +132,37 @@
       }
     ]
   },
-  "terraform": {
+  "pulumi": {
     "binaries": [
       {
         "kind": "archive",
-        "url": "https://releases.hashicorp.com/terraform/1.15.8/terraform_1.15.8_linux_arm64.zip",
-        "sha256": "8891e9dcedc9e3b8950bc6af9d4d8af1f4cfade3062f53b9dc403a89f6ce8c9c",
-        "file": "terraform",
+        "url": "https://github.com/pulumi/pulumi/releases/download/v3.253.0/pulumi-v3.253.0-linux-arm64.tar.gz",
+        "sha256": "7d7074d67a76139226c163b2365f14fbd45d8e2251362a2e10dc4602b3b577ea",
+        "file": "pulumi/pulumi",
         "os": "linux",
         "cpu": "arm64"
       },
       {
         "kind": "archive",
-        "url": "https://releases.hashicorp.com/terraform/1.15.8/terraform_1.15.8_linux_amd64.zip",
-        "sha256": "d25ce7b6902013ad905db3d2eab0be4cd905887fe88b81a6171b8d5503c31f3d",
-        "file": "terraform",
+        "url": "https://github.com/pulumi/pulumi/releases/download/v3.253.0/pulumi-v3.253.0-linux-x64.tar.gz",
+        "sha256": "33161e521280e6c77395a46344dba5ff9c118a90df254801e662087143b4d1ac",
+        "file": "pulumi/pulumi",
         "os": "linux",
         "cpu": "x86_64"
       },
       {
         "kind": "archive",
-        "url": "https://releases.hashicorp.com/terraform/1.15.8/terraform_1.15.8_darwin_arm64.zip",
-        "sha256": "f210110c5698b94d803a7a63cdb0251b5455c150841478808e2bbb343f95ed68",
-         "file": "terraform",
+        "url": "https://github.com/pulumi/pulumi/releases/download/v3.253.0/pulumi-v3.253.0-darwin-arm64.tar.gz",
+        "sha256": "12d1d00e1a6411ab9af07a9afbd94ca234e889909281dc482ee2e466add28e3e",
+         "file": "pulumi/pulumi",
         "os": "macos",
         "cpu": "arm64"
       },
       {
         "kind": "archive",
-        "url": "https://releases.hashicorp.com/terraform/1.15.8/terraform_1.15.8_darwin_amd64.zip",
-        "sha256": "e2e812e783771159bf758fd4e55d6dc9bb08f63e2af2c63d212721807a02c5dc",
-        "file": "terraform",
+        "url": "https://github.com/pulumi/pulumi/releases/download/v3.253.0/pulumi-v3.253.0-darwin-x64.tar.gz",
+        "sha256": "afee83f8af2845556eb69cb92632211723860235ef224bac3b80f905820497a0",
+        "file": "pulumi/pulumi",
         "os": "macos",
         "cpu": "x86_64"
       }
