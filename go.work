@@ -7,4 +7,5 @@ use (
 	./backend/app/service/member
 	./backend/kapis
 	./backend/library
+	./infra/aws
 )
