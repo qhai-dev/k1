@@ -24,10 +24,14 @@ bazel_dep(name = "rules_shell", version = "0.8.0")
 bazel_dep(name = "rules_gitops", version = "1.0.0-rc.2")
 
 kustomize = use_extension("@rules_gitops//kustomize:defs.bzl", "kustomize")
-kustomize.toolchain(version = "5.8.0")
+kustomize.toolchain(
+    version = "5.8.0",
+)
 
 kubectl = use_extension("@rules_gitops//kubectl:defs.bzl", "kubectl")
-kubectl.toolchain(version = "1.35.0")
+kubectl.toolchain(
+    version = "1.35.0",
+)
 
 bazel_dep(name = "rules_img", version = "0.3.17")
 
@@ -45,7 +49,6 @@ bazel_dep(name = "rules_nodejs", version = "6.7.5")
 
 node = use_extension("@rules_nodejs//nodejs:extensions.bzl", "node")
 node.toolchain(
-    name = "node",
     node_version = "24.18.0",
 )
 use_repo(node, "node")
