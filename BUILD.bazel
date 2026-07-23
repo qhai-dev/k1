@@ -23,7 +23,7 @@ mdbook(
     srcs = [
         "//docs:all_docs",
     ],
-    book = "book.toml",
+    book = "//:book.toml",
 )
 
 mdbook_server(
