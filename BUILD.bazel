@@ -1,5 +1,6 @@
 load("@gazelle//:def.bzl", "gazelle")
 load("@npm//:defs.bzl", "npm_link_all_packages")
+load("@rules_rust_mdbook//:defs.bzl", "mdbook", "mdbook_server")
 
 npm_link_all_packages(
     name = "node_modules",
@@ -13,4 +14,17 @@ npm_link_all_packages(
 # gazelle:exclude scripts
 gazelle(
     name = "gazelle",
+)
+
+mdbook(
+    name = "book",
+    srcs = [
+        "//docs",
+    ],
+    book = ":book.toml",
+)
+
+mdbook_server(
+    name = "book_server",
+    book = ":book",
 )

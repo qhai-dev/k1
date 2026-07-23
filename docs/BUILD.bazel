@@ -1,14 +1,9 @@
-load("@rules_rust_mdbook//:defs.bzl", "mdbook", "mdbook_server")
-
-mdbook(
-    name = "book",
+filegroup(
+    name = "docs",
     srcs = glob([
-        "src/**/*.md",
+        "**/*.md",
     ]),
-    book = "book.toml",
-)
-
-mdbook_server(
-    name = "server",
-    book = ":book",
+    visibility = [
+        "//visibility:public",
+    ],
 )
