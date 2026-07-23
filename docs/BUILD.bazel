@@ -1,3 +1,14 @@
-exports_files([
-    "",
-])
+load("@rules_rust_mdbook//:defs.bzl", "mdbook", "mdbook_server")
+
+mdbook(
+    name = "book",
+    srcs = glob([
+        "src/**/*.md",
+    ]),
+    book = "book.toml",
+)
+
+mdbook_server(
+    name = "server",
+    book = ":book",
+)
