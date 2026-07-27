@@ -7,6 +7,6 @@ mdbook(
 )
 
 mdbook_server(
-    name = "docs",
+    name = "server",
     book = ":book",
 )
