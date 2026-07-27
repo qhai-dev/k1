@@ -1,12 +1,12 @@
 load("@rules_rust_mdbook//:defs.bzl", "mdbook", "mdbook_server")
 
 mdbook(
-    name = "docs",
+    name = "book",
     srcs = glob(["src/**/*.md"]),
     book = "//docs:book.toml",
 )
 
 mdbook_server(
-    name = "server",
-    book = ":docs",
+    name = "docs",
+    book = ":book",
 )
