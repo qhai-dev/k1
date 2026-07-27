@@ -1,6 +1,8 @@
 [book]
-title = "developer Documentation"
-authors = ["qhai-dev"]
+title = "document"
 description = "A full-stack development framework for the cloud-native"
-src="docs"
+authors = ["qhai-dev"]
 language = "zh-CN"
+
+[rust]
+edition = "2021"

@@ -1,7 +1,12 @@
-package(default_visibility = ["//visibility:public"])
+load("@rules_rust_mdbook//:defs.bzl", "mdbook", "mdbook_server")
 
-filegroup(
-    name = "all_docs",
-    srcs = glob(["*"]),
-    visibility = ["//:__subpackages__"],
+mdbook(
+    name = "docs",
+    srcs = glob(["src/**/*.md"]),
+    book = "//docs:book.toml",
+)
+
+mdbook_server(
+    name = "server",
+    book = ":docs",
 )
