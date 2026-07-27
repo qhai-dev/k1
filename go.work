@@ -1,7 +1,5 @@
 go 1.26.4
 
 use (
-	./backend/kapis
-	./backend/library
 	./infra/aws
 )
