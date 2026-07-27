@@ -1,5 +1,2 @@
 [book]
-title = ""
-
-[rust]
-edition = "2021"
+title = "docs"
