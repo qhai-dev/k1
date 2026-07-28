@@ -1,5 +1,1 @@
 go 1.26.4
-
-use (
-	./infra/aws
-)
