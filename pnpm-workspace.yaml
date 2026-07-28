@@ -1,6 +1,5 @@
 packages:
-  - "frontend/app/*"
-  - "frontend/kapis"
+  - "frontend/apps/*"
   - "frontend/packages/*"
 allowBuilds:
   '@parcel/watcher': true
