@@ -1,8 +1,4 @@
-# Kairo
-
-```sh
-    
-```
+# README.md
 
 bazel run @rules_go//go -- mod tidy -v
 
