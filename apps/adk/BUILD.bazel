@@ -1,8 +1,0 @@
-load("@rules_go//go:def.bzl", "go_library")
-
-go_library(
-    name = "adk",
-    srcs = ["agent.go"],
-    importpath = "github.com/qhai-dev/kairo/backend/library/adk",
-    visibility = ["//visibility:public"],
-)
