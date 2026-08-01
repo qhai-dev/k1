@@ -1,5 +1,5 @@
 packages:
-  - "packages/**"
+  - "frontend/**"
 allowBuilds:
   '@parcel/watcher': true
   '@swc/core': true
