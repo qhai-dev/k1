@@ -9,7 +9,6 @@ go_deps = use_extension("@gazelle//:extensions.bzl", "go_deps")
 go_deps.from_file(go_work = "//:go.work")
 
 bazel_dep(name = "protobuf", version = "35.1")
-bazel_dep(name = "rules_shell", version = "0.8.0")
 bazel_dep(name = "rules_img", version = "0.3.17")
 
 pull = use_repo_rule("@rules_img//img:pull.bzl", "pull")
@@ -22,13 +21,4 @@ pull(
     tag = "latest-amd64",
 )
 
-bazel_dep(name = "rules_multitool", version = "1.11.1")
-
-multitool = use_extension("@rules_multitool//multitool:extension.bzl", "multitool")
-multitool.hub(
-    lockfile = "//tools:tools.json",
-)
-use_repo(multitool, "multitool")
-
-bazel_dep(name = "bazel_env.bzl", version = "0.8.0")
 bazel_dep(name = "rules_rust_mdbook", version = "0.71.3")
