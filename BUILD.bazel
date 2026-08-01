@@ -1,18 +1,24 @@
 load("@gazelle//:def.bzl", "gazelle")
-load("@npm//:defs.bzl", "npm_link_all_packages")
-
-npm_link_all_packages(
-    name = "node_modules",
-)
+load("@rules_rust_mdbook//:defs.bzl", "mdbook", "mdbook_server")
 
 # gazelle:prefix github.com/qhai-dev/kairo
 
 # gazelle:exclude deploy
+# gazelle:exclude devenv
 # gazelle:exclude docs
 # gazelle:exclude frontend
-# gazelle:exclude scripts
-# gazelle:exclude tests
-# gazelle:exclude tools
+# gazelle:exclude infra
 gazelle(
     name = "gazelle",
+)
+
+mdbook(
+    name = "book",
+    srcs = glob(["docs/**/*.md"]),
+    book = "//:docs.toml",
+)
+
+mdbook_server(
+    name = "server",
+    book = ":book",
 )
