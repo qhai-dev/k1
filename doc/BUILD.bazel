@@ -1,0 +1,19 @@
+load("@rules_rust_mdbook//:defs.bzl", "mdbook", "mdbook_server")
+
+filegroup(
+    name = "srcs",
+    srcs = glob(["**/*.md"]),
+)
+
+mdbook(
+    name = "book",
+    srcs = [
+        ":srcs",
+    ],
+    book = ":book.toml",
+)
+
+mdbook_server(
+    name = "server",
+    book = ":book",
+)
