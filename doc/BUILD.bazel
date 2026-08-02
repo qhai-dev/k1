@@ -2,7 +2,7 @@ load("@rules_rust_mdbook//:defs.bzl", "mdbook", "mdbook_server")
 
 filegroup(
     name = "srcs",
-    srcs = glob(["**/*.md"]),
+    srcs = glob(["**/*.md","**/*.yaml"]),
 )
 
 mdbook(
